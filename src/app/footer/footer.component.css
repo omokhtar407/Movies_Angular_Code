@@ -1,0 +1,102 @@
+/* Start Footer */
+footer{
+  background-color: #000;
+  position: relative;
+}
+.logo a{
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #fff;
+  display: block;
+  line-height: 25px;
+}
+.logo a span{
+  color: red;
+}
+.footer_email,footer .footer_phone,.footer_contact_text{
+  color: #ccc;
+  -webkit-transition: color 0.3s;
+  transition:color 0.3s;
+}
+.footer_email i,.footer_phone i,.footer_contact_text i{
+  color: red !important;
+}
+.footer_email:hover{
+  color: red;
+  cursor: pointer;
+}
+.footer_social a{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  margin: 2px;
+  transition: background-color 0.3s;
+}
+.footer_social a:hover {
+  background-color: #fff;
+}
+.footer_social a:hover i{
+  color: #000;
+}
+h3{
+  font-size: 1.2rem;
+}
+.item ul li a{
+  display: block;
+  color: #ccc !important;
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+  transition: color 0.3s;
+}
+.item ul li a:hover{
+  color: red !important;
+}
+.item > p{
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: start !important;
+}
+.form-control{
+  box-shadow: none !important;
+  background-color: transparent !important;
+  color:#fff !important;
+}
+.form-control:focus{
+
+  border-color: red !important;
+}
+.form-control::placeholder{
+  color: #fff !important;
+  font-weight: 600;
+}
+.btn{
+  background-color: red !important;
+  color: #fff;
+}
+.btn:hover{
+  background-color: rgba(255, 0, 0, 0.698) !important;
+}
+.btn:focus {
+  box-shadow: none;
+}
+.copyright{
+  background-color: #000;
+}
+.copyright p{
+  font-size: 0.8rem;
+}
+.copyright .triple{
+  color: red !important;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.copyright .triple:hover{
+  color: #fff !important;
+}
+/* End Footer */

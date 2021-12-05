@@ -1,0 +1,10 @@
+header
+{
+  background-image: url(../../assets/imgs/home.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+img{
+  width: 200px;
+  height: 250px;
+}

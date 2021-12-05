@@ -1,0 +1,71 @@
+
+/* Start Nav */
+.navbar {
+  z-index: 5;
+  padding:  1rem !important;
+}
+@media (max-width: 767px) {
+  .container,
+  .container-sm {
+    max-width: 100% !important;
+  }
+}
+.navbar-brand{
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.navbar-brand:hover{
+  color: #fff !important;
+}
+.navbar-brand span{
+  color: red;
+}
+.nav-link {
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 0.5rem !important;
+  margin: 0.5rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.nav-link:hover {
+  color: red !important;
+}
+.d-non{
+  display: none;
+}
+@media (max-width: 767px) {
+  .collapse {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .nav-link {
+    padding: 0.5rem  !important;
+    color: #fff !important;
+    margin: 0.5rem  !important;
+  }
+}
+.logout,.signin{
+  background-color: red;
+  border-radius: 0 !important;
+  padding: 0.3rem 1.2rem !important;
+  border:1px solid red;
+  text-align: center;
+}
+.signup{
+  border-radius: 0 !important;
+  padding: 0.3rem 1.2rem !important;
+  border:1px solid red;
+  text-align: center;
+}
+.logout:hover,.signin:hover,.signup:hover{
+  background-color:  rgba(255, 0, 0, 0.698) !important;
+  color: #fff !important;
+  border:1px solid rgba(255, 0, 0, 0.698) !important;
+}
+
+/* End Nav */

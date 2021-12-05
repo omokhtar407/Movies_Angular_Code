@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
+body{
+  color: #fff;
+  overflow-y: hidden;
+}
+a{
+  text-decoration: none !important;
+  color: #fff !important;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* Home Component */
+#Trending .owl-carousel,#Trending .owl-carousel .owl-item,
+#Now_Playing .owl-carousel,#Now_Playing .owl-carousel .owl-item,
+#Popular .owl-carousel,#Popular .owl-carousel .owl-item,
+#Top_Rated .owl-carousel,#Top_Rated .owl-carousel .owl-item,
+#UpComing .owl-carousel,#UpComing .owl-carousel .owl-item{
+  position:initial;
+}
+#Trending .owl-nav,
+#Now_Playing .owl-nav,
+#Popular .owl-nav,
+#Top_Rated .owl-nav,
+#UpComing .owl-nav{
+  margin-top: 10px;
+  position: absolute ;
+  top: -32px ;
+  right: 2px ;
+  font-weight: bold;
+  display: flex !important;
+}
+#Trending .owl-prev,#Trending .owl-next,
+#Now_Playing .owl-prev,#Now_Playing .owl-next,
+#Popular .owl-prev,#Popular .owl-next,
+#Top_Rated .owl-prev,#Top_Rated .owl-next,
+#UpComing .owl-prev,#UpComing .owl-next{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px !important;
+  font-weight: bold;
+  transition: color 0.3s;
+  background-color: transparent !important;
+}
+#Trending .owl-prev:hover,#Trending .owl-next:hover,
+#Now_Playing .owl-prev:hover,#Now_Playing .owl-next:hover,
+#Popular .owl-prev:hover,#Popular .owl-next:hover,
+#Top_Rated .owl-prev:hover,#Top_Rated .owl-next:hover,
+#UpComing .owl-prev:hover,#UpComing .owl-next:hover{
+  color: red;
+}
+@media (max-width:767px) {
+  #Trending .owl-nav,
+  #Now_Playing .owl-nav,
+  #Popular .owl-nav,
+  #Top_Rated .owl-nav,
+  #UpComing .owl-nav{top: -27px;}
+}
+/*End Home Component */
+/* loading */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  z-index: 99999999999;
+  display: none;
+  }
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(255, 0, 0);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+/* End loading */

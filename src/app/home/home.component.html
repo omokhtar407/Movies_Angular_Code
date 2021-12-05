@@ -1,0 +1,115 @@
+
+
+<app-slider [headerTrendingMovies] ='trendingMovies'></app-slider>
+
+  <section id="Now_Playing" class="py-5">
+    <div class="container">
+      <h1>Now Playing Movies</h1>
+      <div class="row g-4 position-relative">
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let movie of nowPlaying">
+            <ng-template carouselSlide [id]="movie.id">
+              <a [routerLink]="['/moviedetails' ,movie.id]">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <div class="vote">
+                  {{movie.vote_average}}
+                </div>
+              </a>
+            </ng-template>
+          </ng-container>
+
+        </owl-carousel-o>
+      </div>
+    </div>
+  </section>
+
+  <section id="Trending" class="py-5 position-relative">
+    <div class="container">
+      <h1>Trending Movies</h1>
+      <div class="row g-4 position-relative">
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let movie of trendingMovies">
+            <ng-template carouselSlide [id]="movie.id">
+              <a [routerLink]="['/moviedetails' ,movie.id]">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <div class="vote">
+                  {{movie.vote_average}}
+                </div>
+              </a>
+            </ng-template>
+          </ng-container>
+
+        </owl-carousel-o>
+      </div>
+    </div>
+  </section>
+
+  <section id="Popular" class="py-5">
+    <div class="container">
+      <h1>Popular Movies</h1>
+      <div class="row g-4 position-relative">
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let movie of popular">
+            <ng-template carouselSlide [id]="movie.id">
+              <a [routerLink]="['/moviedetails' ,movie.id]">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <div class="vote">
+                  {{movie.vote_average}}
+                </div>
+              </a>
+            </ng-template>
+          </ng-container>
+
+        </owl-carousel-o>
+      </div>
+    </div>
+  </section>
+
+  <section id="Top_Rated" class="py-5">
+    <div class="container">
+      <h1>Top Rated Movies</h1>
+      <div class="row g-4 position-relative">
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let movie of topRated">
+            <ng-template carouselSlide [id]="movie.id">
+              <a [routerLink]="['/moviedetails' ,movie.id]">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <div class="vote">
+                  {{movie.vote_average}}
+                </div>
+              </a>
+            </ng-template>
+          </ng-container>
+
+        </owl-carousel-o>
+      </div>
+    </div>
+  </section>
+
+  <section id="UpComing" class="py-5">
+    <div class="container">
+      <h1>Up Coming Movies</h1>
+      <div class="row g-4 position-relative">
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let movie of upComing">
+            <ng-template carouselSlide [id]="movie.id">
+              <a [routerLink]="['/moviedetails' ,movie.id]">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <div class="vote">
+                  {{movie.vote_average}}
+                </div>
+              </a>
+            </ng-template>
+          </ng-container>
+
+        </owl-carousel-o>
+      </div>
+    </div>
+  </section>
+
+

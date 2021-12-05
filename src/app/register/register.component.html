@@ -1,0 +1,68 @@
+
+<section id="signUp" class="py-5 vh-100 d-flex justify-content-center align-items-center">
+  <div class="overlay"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6">
+        <div class="signup_form py-5 px-4">
+          <a class="logo" routerLink="" >Movie<span>Box</span></a>
+
+          <p *ngIf="error" class="text-danger mb-2">{{error}}</p>
+          <form [formGroup]='registerForm' (ngSubmit)='submitRegisterForm(registerForm)'>
+
+            <div class="group mb-4">
+              <input formControlName='first_name' class="form-control mb-2 rounded-0" type="text" name="first_name" id="first_name" placeholder="First Name">
+              <div *ngIf="registerForm.get('first_name')?.errors != null  && registerForm.get('first_name')?.touched"
+                class="text-danger">
+                <p *ngIf="registerForm.get('first_name')?.errors?.required">Firstname is required</p>
+                <p *ngIf="registerForm.get('first_name')?.errors?.minlength">Firstname minLegnth is 3</p>
+                <p *ngIf="registerForm.get('first_name')?.errors?.maxlength">Firstname maxLegnth is 8</p>
+              </div>
+            </div>
+
+            <div class="group mb-4">
+              <input formControlName='last_name' class="form-control mb-2 rounded-0" type="text" name="last_name" id="last_name" placeholder="Last Name">
+              <div *ngIf="registerForm.get('last_name')?.errors != null  && registerForm.get('last_name')?.touched"
+                class="text-danger">
+                <p *ngIf="registerForm.get('last_name')?.errors?.required">Lastname is required</p>
+                <p *ngIf="registerForm.get('last_name')?.errors?.minlength">Lastname minLegnth is 3</p>
+                <p *ngIf="registerForm.get('last_name')?.errors?.maxlength">Lastname maxLegnth is 8</p>
+              </div>
+            </div>
+
+            <div class="group mb-4">
+              <input formControlName='age' class="form-control mb-2 rounded-0" type="number" name="age" id="age" placeholder="Age">
+              <div *ngIf="registerForm.get('age')?.errors != null  && registerForm.get('age')?.touched"
+                class="text-danger">
+                <p *ngIf="registerForm.get('age')?.errors?.required">Age is required</p>
+                <p *ngIf="registerForm.get('age')?.errors?.min">Age min is 16</p>
+                <p *ngIf="registerForm.get('age')?.errors?.max">Age max is 80</p>
+              </div>
+            </div>
+
+            <div class="group mb-4">
+              <input formControlName='email' class="form-control mb-2 rounded-0" type="email" name="email" id="email" placeholder="Email">
+              <div *ngIf="registerForm.get('email')?.errors != null  && registerForm.get('email')?.touched"
+                class="text-danger">
+                <p *ngIf="registerForm.get('email')?.errors?.required">Email is required</p>
+                <p *ngIf="registerForm.get('email')?.errors?.email">Email is invalid</p>
+              </div>
+            </div>
+
+            <div class="group mb-4">
+              <input formControlName='password' class="form-control mb-2 rounded-0" type="password" name="password" id="password" placeholder="Password">
+              <div *ngIf="registerForm.get('password')?.errors != null  && registerForm.get('password')?.touched"
+                class="text-danger">
+                <p *ngIf="registerForm.get('password')?.errors?.required">Password is required</p>
+                <p *ngIf="registerForm.get('password')?.errors?.pattern">Password must contain (6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter)</p>
+              </div>
+            </div>
+
+            <button [disabled]="registerForm.invalid" type="submit" class="btn rounded-0 text-white fw-bold" >Sign Up</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

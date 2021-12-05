@@ -1,0 +1,31 @@
+#Now_Playing , #Top_Rated{
+  background: #000;
+}
+#Trending , #Popular,#UpComing{
+  background: #090808;
+}
+h1{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+@media (max-width:767px) {
+  h1{font-size: 1rem;}
+}
+.vote{
+  width: 30px;
+  height: 30px;
+  padding: 0.5rem;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+

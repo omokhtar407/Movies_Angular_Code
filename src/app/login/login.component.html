@@ -1,0 +1,52 @@
+
+<!-- Loading -->
+<div class="loading d-flex justify-content-center align-items-center">
+  <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
+<!-- End Loading -->
+
+<section id="signIn" class="py-5 vh-100 d-flex justify-content-center align-items-center ">
+  <div class="overlay"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6">
+        <div class="signin_form py-5 px-4">
+          <a class="logo" routerLink="" >Movie<span>Box</span></a>
+          <p *ngIf="error" class="text-danger mb-2">{{error}}</p>
+          <form [formGroup]='loginForm' (ngSubmit)='submitLoginForm(loginForm)'>
+
+            <div class="group mb-4">
+              <input formControlName='email' class="form-control mb-2 rounded-0" type="email" name="email" id="email" placeholder="Email">
+              <div *ngIf="loginForm.get('email')?.errors != null  && loginForm.get('email')?.touched"
+                class="text-danger">
+                <p *ngIf="loginForm.get('email')?.errors?.required">Email is required</p>
+                <p *ngIf="loginForm.get('email')?.errors?.email">Email is invalid</p>
+              </div>
+            </div>
+
+            <div class="group mb-4">
+              <input formControlName='password' class="form-control mb-2 rounded-0" type="password" name="password" id="password" placeholder="Password">
+              <div *ngIf="loginForm.get('password')?.errors != null  && loginForm.get('password')?.touched"
+                class="text-danger">
+                <p *ngIf="loginForm.get('password')?.errors?.required">Password is required</p>
+                <p *ngIf="loginForm.get('password')?.errors?.pattern">Password is invalid</p>
+              </div>
+            </div>
+
+            <div class="group d-flex align-items-center justify-content-between  flex-wrap mb-5">
+              <div>
+                <input type="checkbox" class="me-2">
+                <label>Remember Me</label>
+              </div>
+              <a class="forgot" routerLink="">forgot password ?</a>
+            </div>
+
+            <button [disabled]="loginForm.invalid" type="submit" class="btn rounded-0 text-white fw-bold " >Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

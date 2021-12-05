@@ -1,0 +1,51 @@
+.backGround
+{
+  position: relative;
+  text-align: center;
+  padding:12rem 0rem ;
+  background-image: url(../../assets/imgs/contact.jpg);
+  background-size: cover;
+  background-position: 50% 100%;
+}
+#contact{
+  background-color: #090808;
+}
+.getTouch small,small a
+{
+  color: #ccc !important;
+  transition:  color 0.3s
+}
+small a:hover{
+  color:red !important;
+}
+i{
+  color: red;
+  padding-top: 5px;
+}
+.group{
+  flex-basis: 48%;
+}
+.contactUs{
+  background-color: #000;
+}
+.form-control{
+  background-color: #090808;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+.form-control::placeholder{
+  color: #ccc ;
+}
+.form-control:focus,.btn:focus{
+  border-color: red !important;
+  box-shadow: 0 0 0 0.25rem #b71c1c75 !important;
+}
+.btn{
+  background-color: red ;
+  display: block;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+.btn:hover{
+  background-color: rgba(255, 0, 0, 0.637) !important;
+}
