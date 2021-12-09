@@ -1,0 +1,57 @@
+#Tv{
+  padding: 6rem 0rem;
+  background-color: #000;
+}
+.vote{
+  width: 30px;
+  height: 30px;
+  padding: 0.5rem;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+@media (max-width:767px) {
+  form{
+    width: 70% !important;
+  }
+}
+@media (max-width:576px) {
+  form{
+    width: 100% !important;
+  }
+}
+.form-control{
+  height: 40px;
+  background-color: transparent;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+.form-control::placeholder{
+  color: #ccc;
+}
+.form-control:focus,.btn:focus{
+  border-color: red !important;
+  box-shadow: 0 0 0 0.25rem #b71c1c75 !important;
+}
+.page-link{
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .5s;
+}
+
+.page-link:hover{
+  background-color: red !important;
+}
+
+.active{
+  background-color: red !important;
+}
+

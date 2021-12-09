@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +11,7 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent implements OnInit {
 
   error:string='';
-  constructor(private _AuthService:AuthService, private _Router:Router) { }
+  constructor(private _AuthService:AuthService, private _Router:Router ,private toastr:ToastrService) { }
 
   registerForm:FormGroup = new FormGroup({
 
@@ -27,10 +28,12 @@ export class RegisterComponent implements OnInit {
       if(registerForm.valid){
 
         if(response.message == 'success'){
-          this._Router.navigate(['login']);
+
+          this.toastr.success('Success', "",{positionClass:'toast-top-right',timeOut: 1500});
         }
         else{
           this.error = response.errors.email.message;
+          this.toastr.error(`${this.error}!`, "",{positionClass:'toast-top-right',timeOut: 1500});
         }
       }
     });
@@ -38,6 +41,6 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit(): void {
-  }
+  } 
 
 }

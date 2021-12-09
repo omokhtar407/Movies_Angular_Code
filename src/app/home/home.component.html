@@ -1,4 +1,6 @@
 
+<ngx-spinner bdColor="#000" size="medium" color="red" type="ball-clip-rotate-multiple"
+[fullScreen]="true"></ngx-spinner>
 
 <app-slider [headerTrendingMovies] ='trendingMovies'></app-slider>
 
@@ -11,7 +13,7 @@
           <ng-container *ngFor="let movie of nowPlaying">
             <ng-template carouselSlide [id]="movie.id">
               <a [routerLink]="['/moviedetails' ,movie.id]">
-                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title ? movie.title : movie">
                 <div class="vote">
                   {{movie.vote_average}}
                 </div>
@@ -32,8 +34,8 @@
 
           <ng-container *ngFor="let movie of trendingMovies">
             <ng-template carouselSlide [id]="movie.id">
-              <a [routerLink]="['/moviedetails' ,movie.id]">
-                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+              <a [routerLink]="['/moviedetails' ,movie.id,movie.media_type]">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title ? movie.title : movie">
                 <div class="vote">
                   {{movie.vote_average}}
                 </div>
@@ -55,7 +57,7 @@
           <ng-container *ngFor="let movie of popular">
             <ng-template carouselSlide [id]="movie.id">
               <a [routerLink]="['/moviedetails' ,movie.id]">
-                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title ? movie.title : movie">
                 <div class="vote">
                   {{movie.vote_average}}
                 </div>
@@ -77,7 +79,7 @@
           <ng-container *ngFor="let movie of topRated">
             <ng-template carouselSlide [id]="movie.id">
               <a [routerLink]="['/moviedetails' ,movie.id]">
-                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title ? movie.title : movie">
                 <div class="vote">
                   {{movie.vote_average}}
                 </div>
@@ -99,7 +101,7 @@
           <ng-container *ngFor="let movie of upComing">
             <ng-template carouselSlide [id]="movie.id">
               <a [routerLink]="['/moviedetails' ,movie.id]">
-                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.alt">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title ? movie.title : movie">
                 <div class="vote">
                   {{movie.vote_average}}
                 </div>

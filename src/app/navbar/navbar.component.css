@@ -25,8 +25,7 @@
 .nav-link {
   text-transform: capitalize;
   color: #fff !important;
-  padding: 0.5rem !important;
-  margin: 0.5rem;
+  padding: 0.5rem 0.7rem !important;
   font-weight: 700;
   border-radius: 0.5rem;
 }
@@ -44,9 +43,8 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
   .nav-link {
-    padding: 0.5rem  !important;
+    padding: 0.5rem  0.7rem !important;
     color: #fff !important;
-    margin: 0.5rem  !important;
   }
 }
 .logout,.signin{

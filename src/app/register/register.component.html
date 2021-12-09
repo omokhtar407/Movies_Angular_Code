@@ -7,7 +7,7 @@
         <div class="signup_form py-5 px-4">
           <a class="logo" routerLink="" >Movie<span>Box</span></a>
 
-          <p *ngIf="error" class="text-danger mb-2">{{error}}</p>
+          <!-- <p *ngIf="error" class="text-danger mb-2">{{error}}</p> -->
           <form [formGroup]='registerForm' (ngSubmit)='submitRegisterForm(registerForm)'>
 
             <div class="group mb-4">

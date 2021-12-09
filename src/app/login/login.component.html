@@ -1,9 +1,5 @@
-
-<!-- Loading -->
-<div class="loading d-flex justify-content-center align-items-center">
-  <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-</div>
-<!-- End Loading -->
+<ngx-spinner bdColor="#000" size="medium" color="red" type="ball-clip-rotate-multiple"
+    [fullScreen]="true"></ngx-spinner>
 
 <section id="signIn" class="py-5 vh-100 d-flex justify-content-center align-items-center ">
   <div class="overlay"></div>
@@ -12,7 +8,7 @@
       <div class="col-lg-4 col-md-6">
         <div class="signin_form py-5 px-4">
           <a class="logo" routerLink="" >Movie<span>Box</span></a>
-          <p *ngIf="error" class="text-danger mb-2">{{error}}</p>
+          <!-- <p *ngIf="error" class="alert alert-danger mb-2 text-center fw-bold p-1 rounded-0 mb-0">{{error}}</p> -->
           <form [formGroup]='loginForm' (ngSubmit)='submitLoginForm(loginForm)'>
 
             <div class="group mb-4">

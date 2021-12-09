@@ -24,6 +24,8 @@
     "jquery": "^3.6.0",
     "jwt-decode": "^3.1.2",
     "ngx-owl-carousel-o": "^6.0.0",
+    "ngx-spinner": "^13.0.0",
+    "ngx-toastr": "^14.2.1",
     "ngx-wow": "^2.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
 
 
   imgPrefix:string='https://image.tmdb.org/t/p/w500/';
-  constructor(private _MoviesService:MoviesService) { }
+  constructor(private _MoviesService:MoviesService ,private _NgxSpinnerService:NgxSpinnerService) { }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -44,7 +45,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._MoviesService.getTrendingMovies().subscribe((respons)=>{
+    this._MoviesService.getTrending('movie',1).subscribe((respons)=>{
       this.trendingMovies = respons.results;
     });
 
@@ -63,6 +64,11 @@ export class HomeComponent implements OnInit {
     this._MoviesService.getMoviesTypes('upcoming').subscribe((respons)=>{
       this.upComing = respons.results;
     });
+
+    this._NgxSpinnerService.show();
+    setTimeout(()=>{
+      this._NgxSpinnerService.hide();
+    },900);
   }
 
 }

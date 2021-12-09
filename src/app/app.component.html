@@ -1,9 +1,8 @@
 <app-navbar></app-navbar>
 
-<div [@myAnimation]="o.isActivated ? o.activatedRoute : ''">
-  <router-outlet #o="outlet"></router-outlet>
+<div [@routeAnimation]="outlet.isActivated?outlet.activatedRoute:''">
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>
-<!-- <router-outlet></router-outlet> -->
 
 <app-footer></app-footer>
 

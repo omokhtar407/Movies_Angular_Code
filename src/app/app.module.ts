@@ -17,6 +17,14 @@ import { SliderComponent } from './slider/slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgwWowModule } from 'ngx-wow';
+import { MoviesComponent } from './movies/movies.component';
+import { TvComponent } from './tv/tv.component';
+import { PeopleComponent } from './people/people.component';
+import { SearchPipePipe } from './search-pipe.pipe';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +37,11 @@ import { NgwWowModule } from 'ngx-wow';
     AboutComponent,
     ContactComponent,
     MoviedetailsComponent,
-    SliderComponent
+    SliderComponent,
+    MoviesComponent,
+    TvComponent,
+    PeopleComponent,
+    SearchPipePipe
   ],
   imports: [
     BrowserModule,
@@ -39,6 +51,9 @@ import { NgwWowModule } from 'ngx-wow';
     BrowserAnimationsModule,
     CarouselModule,
     NgwWowModule,
+    ToastrModule.forRoot({preventDuplicates:true,progressBar:true,progressAnimation:'increasing'}),
+    CommonModule,
+    NgxSpinnerModule
     ],
   providers: [],
   bootstrap: [AppComponent]
