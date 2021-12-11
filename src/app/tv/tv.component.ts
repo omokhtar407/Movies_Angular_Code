@@ -34,11 +34,12 @@ export class TvComponent implements OnInit {
     this._MoviesService.getTrending("tv", page).subscribe((response) => {
       this.trendingTV = response.results;
       this.totalPages = response.total_pages;
+      this._NgxSpinnerService.hide();
       this.setPages();
-      setTimeout(()=>{
-        this._NgxSpinnerService.hide();
-      },500);
     });
+    (error:any)=>{
+      this._NgxSpinnerService.hide();
+    };
 
   }
 
@@ -79,6 +80,7 @@ export class TvComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._NgxSpinnerService.show();
     this.getMovies(this.currentPage);
   }
 

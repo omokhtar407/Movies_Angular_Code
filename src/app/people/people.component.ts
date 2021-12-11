@@ -27,6 +27,7 @@ export class PeopleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._NgxSpinnerService.show();
     this.getMovies(this.currentPage);
   }
 
@@ -34,13 +35,14 @@ export class PeopleComponent implements OnInit {
     this._NgxSpinnerService.show();
     this.currentPage = page;
     this._MoviesService.getTrending("people", page).subscribe((response) => {
-      setTimeout(()=>{
-        this._NgxSpinnerService.hide();
-      },500);
       this.People = response.results;
       this.totalPages = response.total_pages;
+      this._NgxSpinnerService.hide();
       this.setPages();
     });
+    (error:any)=>{
+      this._NgxSpinnerService.hide();
+    };
 
   }
 

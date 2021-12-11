@@ -4,8 +4,9 @@
   text-align: center;
   padding:12rem 0rem ;
   background-image: url(../../assets/imgs/contact.jpg);
+  background-attachment: fixed;
   background-size: cover;
-  background-position: 50% 100%;
+  background-position: 50% 50%;
 }
 #contact{
   background-color: #090808;

@@ -13,7 +13,7 @@ a{
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 /* Home Component */
 #Trending .owl-carousel,#Trending .owl-carousel .owl-item,

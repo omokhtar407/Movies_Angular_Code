@@ -8,7 +8,6 @@
       <div class="col-lg-4 col-md-6">
         <div class="signin_form py-5 px-4">
           <a class="logo" routerLink="" >Movie<span>Box</span></a>
-          <!-- <p *ngIf="error" class="alert alert-danger mb-2 text-center fw-bold p-1 rounded-0 mb-0">{{error}}</p> -->
           <form [formGroup]='loginForm' (ngSubmit)='submitLoginForm(loginForm)'>
 
             <div class="group mb-4">
@@ -16,7 +15,7 @@
               <div *ngIf="loginForm.get('email')?.errors != null  && loginForm.get('email')?.touched"
                 class="text-danger">
                 <p *ngIf="loginForm.get('email')?.errors?.required">Email is required</p>
-                <p *ngIf="loginForm.get('email')?.errors?.email">Email is invalid</p>
+                <p *ngIf="loginForm.get('email')?.errors?.pattern">Email is invalid</p>
               </div>
             </div>
 

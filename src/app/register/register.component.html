@@ -45,7 +45,7 @@
               <div *ngIf="registerForm.get('email')?.errors != null  && registerForm.get('email')?.touched"
                 class="text-danger">
                 <p *ngIf="registerForm.get('email')?.errors?.required">Email is required</p>
-                <p *ngIf="registerForm.get('email')?.errors?.email">Email is invalid</p>
+                <p *ngIf="registerForm.get('email')?.errors?.pattern">Email is invalid</p>
               </div>
             </div>
 

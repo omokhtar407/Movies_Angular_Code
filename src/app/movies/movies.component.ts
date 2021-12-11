@@ -25,20 +25,23 @@ export class MoviesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._NgxSpinnerService.show();
     this.getMovies(this.currentPage);
   }
 
   getMovies(page: number) {
+    this._NgxSpinnerService.show();
     this.currentPage = page;
     this._MoviesService.getTrending("movie", page).subscribe((response) => {
       this.trendingMovies = response.results;
       this.totalPages = response.total_pages;
+      this._NgxSpinnerService.hide();
       this.setPages();
     });
-    this._NgxSpinnerService.show();
-    setTimeout(()=>{
+
+    (error:any)=>{
       this._NgxSpinnerService.hide();
-    },500);
+    }
   }
 
   setPages() {

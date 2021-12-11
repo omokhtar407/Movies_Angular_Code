@@ -18,21 +18,23 @@ export class MoviedetailsComponent implements OnInit {
   constructor(private _ActivatedRoute:ActivatedRoute ,private _MoviesService:MoviesService ,private _NgxSpinnerService:NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this._NgxSpinnerService.show();
     this.id = this._ActivatedRoute.snapshot.params.id;
     this.term = this._ActivatedRoute.snapshot.params.term;
 
     this._MoviesService.getMovieDetails(this.id,this.term).subscribe((response)=>{
-      this.movieDetails =response
+      this.movieDetails =response;
+      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypesDetails(this.id).subscribe((response)=>{
-      this.movieDetails =response
+      this.movieDetails =response;
+      this._NgxSpinnerService.hide();
     });
 
-    this._NgxSpinnerService.show();
-    setTimeout(()=>{
+    (error:any)=>{
       this._NgxSpinnerService.hide();
-    },700);
+    };
   }
 
 }

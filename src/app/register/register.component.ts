@@ -17,19 +17,19 @@ export class RegisterComponent implements OnInit {
 
       first_name:new FormControl(null,[Validators.required ,Validators.minLength(3),Validators.maxLength(8)]),
       last_name:new FormControl(null,[Validators.required ,Validators.minLength(3),Validators.maxLength(8)]),
-      email:new FormControl(null,[Validators.required ,Validators.email]),
+      email:new FormControl(null,[Validators.required ,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]),
       password:new FormControl(null,[Validators.required ,Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/)]),
       age:new FormControl(null,[Validators.required ,Validators.min(16),Validators.max(80)])
   });
 
   submitRegisterForm(registerForm:FormGroup){
+
     this._AuthService.register(registerForm.value).subscribe((response)=>{
 
       if(registerForm.valid){
-
         if(response.message == 'success'){
-
-          this.toastr.success('Success', "",{positionClass:'toast-top-right',timeOut: 1500});
+          this._Router.navigate(['login']);
+          this.toastr.success('Registeration Success', "",{positionClass:'toast-top-right',timeOut: 1500});
         }
         else{
           this.error = response.errors.email.message;
@@ -41,6 +41,6 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit(): void {
-  } 
+  }
 
 }

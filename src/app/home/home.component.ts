@@ -45,30 +45,35 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._NgxSpinnerService.show();
+
     this._MoviesService.getTrending('movie',1).subscribe((respons)=>{
       this.trendingMovies = respons.results;
+      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('now_playing').subscribe((respons)=>{
       this.nowPlaying = respons.results;
+      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('popular').subscribe((respons)=>{
       this.popular = respons.results;
+      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('top_rated').subscribe((respons)=>{
       this.topRated = respons.results;
+      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('upcoming').subscribe((respons)=>{
       this.upComing = respons.results;
-    });
-
-    this._NgxSpinnerService.show();
-    setTimeout(()=>{
       this._NgxSpinnerService.hide();
-    },900);
+    });
+    (error:any)=>{
+      this._NgxSpinnerService.hide();
+    };
   }
 
 }

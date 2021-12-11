@@ -6,9 +6,10 @@
   position: relative;
   text-align: center;
   padding:12rem 0rem ;
-  background-image: url(../../assets/imgs/about.jpg);
+  background-image: url(../../assets/imgs/black-widow-d-5.png);
   background-size: cover;
-  background-position: center center;
+  background-attachment: fixed;
+  background-position: 50% 30%;
 }
 #about,#watch_movies{
   background-color: #090808;
@@ -26,6 +27,7 @@ small{
   background-image: url(../../assets/imgs/watch.jpg);
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
   position: relative;
 }
 #best_movies h2 ,#watch_movies h2{
