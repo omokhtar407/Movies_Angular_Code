@@ -2,22 +2,6 @@
   padding: 6rem 0rem;
   background-color: #000;
 }
-.vote{
-  width: 30px;
-  height: 30px;
-  padding: 0.5rem;
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  position: absolute;
-  top: 0;
-  right: 30px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
 @media (max-width:767px) {
   form{
     width: 70% !important;

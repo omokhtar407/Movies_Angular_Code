@@ -14,32 +14,11 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // animations:[
-  //   trigger('myAnimation', [
-  //     transition('* => *', [
-  //       query(
-  //         ':enter',
-  //         [style({ opacity: 0 })],
-  //         { optional: true }
-  //       ),
-  //       query(
-  //         ':leave',
-  //          [style({ opacity: 1 }), animate('0.2s', style({ opacity: 0 }))],
-  //         { optional: true }
-  //       ),
-  //       query(
-  //         ':enter',
-  //         [style({ opacity: 0 }), animate('0.2s', style({ opacity: 1 }))],
-  //         { optional: true }
-  //       )
-  //     ])
-  //   ])
-  // ]
   animations: [
     trigger("routeAnimation", [
       transition("*<=>*",[
-        style({opacity:0}),
-        animate("500ms",style({opacity:1}))
+        style({opacity:0 , transform:"translateX(20px)"}),
+        animate("500ms",style({opacity:1, transform:"translateX(0px)"}))
     ])
     ])
   ]
@@ -52,5 +31,14 @@ export class AppComponent {
       return outlet.activatedRoute.snapshot.url
     }
 
+  }
+
+  // Method for Scrolling to Top automatically when i click on routing or any item in pages
+  ScrollToTop(event:any) {
+    window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+    });
   }
 }

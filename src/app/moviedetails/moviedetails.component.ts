@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MoviesService } from '../movies.service';
 
+// for using jQuery
+declare var $:any;
 @Component({
   selector: 'app-moviedetails',
   templateUrl: './moviedetails.component.html',
@@ -17,7 +19,9 @@ export class MoviedetailsComponent implements OnInit {
 
   constructor(private _ActivatedRoute:ActivatedRoute ,private _MoviesService:MoviesService ,private _NgxSpinnerService:NgxSpinnerService) { }
 
+
   ngOnInit(): void {
+
     this._NgxSpinnerService.show();
     this.id = this._ActivatedRoute.snapshot.params.id;
     this.term = this._ActivatedRoute.snapshot.params.term;

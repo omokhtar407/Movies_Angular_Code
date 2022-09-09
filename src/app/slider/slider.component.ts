@@ -14,7 +14,7 @@ export class SliderComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
-    touchDrag: false,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
     nav:false,
@@ -34,7 +34,21 @@ export class SliderComponent implements OnInit {
       }
     },
   }
+
+  MakeShadowOnContainer():void{
+    let SliderContent:any = document.querySelector('.slider_content');
+
+    window.addEventListener('scroll',()=>{
+
+        SliderContent.style.opacity = 1 - +window.pageYOffset/550+'';
+        SliderContent.style.top = +window.pageYOffset+'px';
+        SliderContent.style.backgroundPositionY = -  +window.pageYOffset/2+'px';
+
+    });
+  }
+  
   ngOnInit(): void {
+    this.MakeShadowOnContainer();
   }
 
 }

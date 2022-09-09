@@ -1,5 +1,8 @@
+body{
+  background-color: #141313 !important;
+}
 #movie_details{
-  background-color: #090808;
+  background-color: #141313;
 }
 .spans-style{
   padding: 0.3rem;
@@ -9,6 +12,9 @@
   font-weight: 500;
   display: inline-block;
   color: #fff !important;
+}
+.company_img_container{
+  text-align: center;
 }
 .company-img{
   width: 8rem;

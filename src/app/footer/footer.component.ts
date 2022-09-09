@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FooterComponent implements OnInit {
 
   error:string='';
+  Year:number = 0;
   constructor() { }
 
   submitForm:FormGroup = new FormGroup({
@@ -21,5 +22,6 @@ export class FooterComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.Year = new Date().getFullYear();
   }
 }

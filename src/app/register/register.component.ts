@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
 
       if(registerForm.valid){
         if(response.message == 'success'){
+          this.registerForm.reset();
           this._Router.navigate(['login']);
           this.toastr.success('Registeration Success', "",{positionClass:'toast-top-right',timeOut: 1500});
         }

@@ -1,11 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat+Alternates&display=swap');
+
 body{
-  background-color: #000000 !important;
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-color: #000000;
   color: #fff;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none !important;
   color: #fff !important;
+}
+::selection {
+  background-color: red;
+  color: white;
+}
+::-moz-selection {
+  background-color: red;
+  color: white;
+}
+body::-webkit-scrollbar,
+.offcanvas-body::-webkit-scrollbar,
+.modal::-webkit-scrollbar {
+  width: 0.8rem;
+}
+body::-webkit-scrollbar-track,
+.offcanvas-body::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-track  {
+  background: rgba(255, 0, 0, 0.342);
+}
+body::-webkit-scrollbar-thumb,
+.offcanvas-body::-webkit-scrollbar-thumb,
+.modal::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 20px;
+  border: 5px solid red;
 }
 .overlay{
   position: absolute;
@@ -14,6 +42,11 @@ a{
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.4);
+}
+.ngx_spinner{
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 /* Home Component */
 #Trending .owl-carousel,#Trending .owl-carousel .owl-item,
@@ -30,7 +63,7 @@ a{
 #UpComing .owl-nav{
   margin-top: 10px;
   position: absolute ;
-  top: -32px ;
+  top: -55px ;
   right: 2px ;
   font-weight: bold;
   display: flex !important;
@@ -55,12 +88,29 @@ a{
 #UpComing .owl-prev:hover,#UpComing .owl-next:hover{
   color: red;
 }
+#Trending .owl-prev i,#Trending .owl-next i,
+#Now_Playing .owl-prev i,#Now_Playing .owl-next i,
+#Popular .owl-prev i,#Popular .owl-next i,
+#Top_Rated .owl-prev i,#Top_Rated .owl-next i,
+#UpComing .owl-prev i,#UpComing .owl-next i{
+  font-size: 25px;
+  font-style: italic;
+}
 @media (max-width:767px) {
   #Trending .owl-nav,
   #Now_Playing .owl-nav,
   #Popular .owl-nav,
   #Top_Rated .owl-nav,
-  #UpComing .owl-nav{top: -27px;}
+  #UpComing .owl-nav{top: -51px;}
+
+  #Trending .owl-prev i,#Trending .owl-next i,
+  #Now_Playing .owl-prev i,#Now_Playing .owl-next i,
+  #Popular .owl-prev i,#Popular .owl-next i,
+  #Top_Rated .owl-prev i,#Top_Rated .owl-next i,
+  #UpComing .owl-prev i,#UpComing .owl-next i{
+    font-size: 1.2rem;
+    font-style: italic;
+  }
 }
 /*End Home Component */
 /* loading */
@@ -130,3 +180,52 @@ a{
   }
 }
 /* End loading */
+/* Start Overlay on Movie */
+.ancor_img{
+  position: relative;
+  display: block;
+}
+.ancor_img::before{
+  content: 'Click Here To Show Movie Details';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #6a0000ba;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity .5s;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -ms-transition: opacity .5s;
+  -o-transition: opacity .5s;
+}
+.ancor_img:hover::before{
+  opacity: 1;
+}
+/* End Overlay on Movie */
+/* Start Vote */
+.vote{
+  width: 30px;
+  height: 30px;
+  padding: 0.5rem;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+/* End Vote */

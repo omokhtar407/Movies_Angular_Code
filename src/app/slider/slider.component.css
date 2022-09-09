@@ -6,6 +6,18 @@ header
   background-attachment: fixed;
   position: relative;
 }
+h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  font-size: 3rem;
+  font-weight: 600;
+}
 header::before{
   position: absolute;
   content: '';
@@ -13,9 +25,5 @@ header::before{
   left: 0%;
   right: 0 ;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-img{
-  width: 200px;
-  height: 250px;
+  background-color: rgba(0, 0, 0, 0.4);
 }

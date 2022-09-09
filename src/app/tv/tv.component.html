@@ -1,6 +1,7 @@
-<ngx-spinner bdColor="#000" size="medium" color="red" type="ball-clip-rotate-multiple"
-    [fullScreen]="true"></ngx-spinner>
-    
+<ngx-spinner bdColor="#000" size="medium" color="white" type="ball-clip-rotate-pulse" [fullScreen]="true">
+  <p class="ngx_spinner" > Loading... </p>
+</ngx-spinner>
+
 <section id="Tv">
   <div class="container">
       <div class="d-flex justify-content-center align-items-center flex-column py-5">
@@ -37,11 +38,12 @@
 
           <div *ngFor="let tv of trendingTV|searchPipe:terms" class="col-lg-2 col-md-4 col-sm-6 col-12">
               <div class="movies position-relative">
-                  <a [routerLink]="['/moviedetails',tv.id,tv.media_type]"><img class="img-fluid"
-                          [src]="imgPrefx+tv.poster_path" [alt]="tv.title ? tv.title :tv.name"></a>
-                  <div class="vote">
-                      {{tv.vote_average}}
-                  </div>
+                  <a class="ancor_img" [routerLink]="['/tvdetails',tv.id]">
+                    <img class="img-fluid" [src]="imgPrefx+tv.poster_path"  [alt]="tv.title ? tv.title :tv.name" >
+                    <div class="vote">
+                        {{tv.vote_average | vote}}
+                    </div>
+                  </a>
               </div>
           </div>
       </div>

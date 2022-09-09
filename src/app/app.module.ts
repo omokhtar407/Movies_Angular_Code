@@ -19,11 +19,12 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgwWowModule } from 'ngx-wow';
 import { MoviesComponent } from './movies/movies.component';
 import { TvComponent } from './tv/tv.component';
-import { PeopleComponent } from './people/people.component';
 import { SearchPipePipe } from './search-pipe.pipe';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { TvdetailsComponent } from './tvdetails/tvdetails.component';
+import { VotePipe } from './vote.pipe';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,9 @@ import { CommonModule } from '@angular/common';
     SliderComponent,
     MoviesComponent,
     TvComponent,
-    PeopleComponent,
-    SearchPipePipe
+    SearchPipePipe,
+    TvdetailsComponent,
+    VotePipe
   ],
   imports: [
     BrowserModule,

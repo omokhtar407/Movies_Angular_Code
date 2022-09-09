@@ -15,27 +15,26 @@ export class HomeComponent implements OnInit {
   popular:any[]=[];
   topRated:any[]=[];
 
-
   imgPrefix:string='https://image.tmdb.org/t/p/w500/';
   constructor(private _MoviesService:MoviesService ,private _NgxSpinnerService:NgxSpinnerService) { }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
-    touchDrag: false,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
     nav:true,
-    navText: [ '<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>' ],
+    navText: [ '<i class="fas fa-angle-left" style="font-size:25px; font-style:italic;" ></i>', '<i class="fas fa-angle-right" style="font-size:25px; font-style:italic;"></i>' ],
     margin:10,
     responsive: {
       0: {
         items: 1
       },
       400: {
-        items: 2
+        items: 3
       },
       740: {
-        items: 3
+        items: 4
       },
       940: {
         items: 6
@@ -43,6 +42,7 @@ export class HomeComponent implements OnInit {
     },
 
   }
+
 
   ngOnInit(): void {
     this._NgxSpinnerService.show();

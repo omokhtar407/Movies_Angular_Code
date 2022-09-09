@@ -1,5 +1,6 @@
-<ngx-spinner bdColor="#000" size="medium" color="red" type="ball-clip-rotate-multiple"
-[fullScreen]="true"></ngx-spinner>
+<ngx-spinner bdColor="#000" size="medium" color="white" type="ball-clip-rotate-pulse" [fullScreen]="true">
+  <p class="ngx_spinner" > Loading... </p>
+</ngx-spinner>
 
 <!-- For Tending Movie -->
 <section id="movie_details" class="pad pb-5">
@@ -7,7 +8,7 @@
       <div class="row g-3">
         <div class="col-lg-7">
           <div class="details d-flex justify-content-center flex-column">
-            <h3 class="h1 mb-3">{{movieDetails.title}}</h3>
+            <h3 class="h1 mb-3">{{movieDetails.title ? movieDetails.title : movieDetails.name}}</h3>
 
             <div class="info">
 
@@ -80,8 +81,8 @@
               <div >
                 <span class="spans-style mb-3 me-3">production_Companies</span>
                 <div *ngIf="movieDetails.production_companies" class="row g-4">
-                  <div  *ngFor="let x of movieDetails.production_companies?.slice(0,4)" class="col">
-                      <img *ngIf="x.logo_path" class="company-img " [src]="imgPrefix+x.logo_path">
+                  <div  *ngFor="let x of movieDetails.production_companies?.slice(0,4)" class="col company_img_container">
+                      <img *ngIf="x.logo_path" class="company-img " [src]="imgPrefix+x.logo_path" alt="">
                   </div>
                 </div>
               </div>
