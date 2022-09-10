@@ -58,7 +58,7 @@
                         <span class="spans-style">Released</span>
                       </div>
                       <div class="col-8">
-                        <span>{{tvDetails.first_air_date}}</span>
+                        <span class="ms-3">{{tvDetails.first_air_date}}</span>
                       </div>
                     </div>
 
@@ -73,7 +73,7 @@
                     <span class="spans-style ">Production_Countries</span>
                   </div>
                   <div class="col-lg-8">
-                    <span *ngFor="let x of tvDetails.production_countries" class="ms-md-2 me-2 d-inline">{{x.name}}</span>
+                    <span *ngFor="let x of tvDetails.production_countries" class="ms-md-5 ms-0 d-inline">{{x.name}}</span>
                   </div>
                 </div>
               </div>
@@ -92,7 +92,7 @@
         </div>
 
         <div class="col-lg-4 offset-lg-1">
-          <div class="image">
+          <div class="image poster" data-bs-toggle="modal" data-bs-target="#Trailer">
             <img class="w-100" [src]="imgPrefix+tvDetails.poster_path" [alt]="tvDetails.name" alt="">
           </div>
         </div>
@@ -102,3 +102,20 @@
 </section>
 <!--End For Tending Movie -->
 
+<!-- Model -->
+<div class="modal fade" id="Trailer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="TrailerLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div *ngIf="isTrailer" class="no_trailer">
+            No Trailer For Tv
+          </div>
+          <div class="Trailer_container">
+
+          </div>
+          <div class="modal-tools">
+              <i class="fas fa-times" data-bs-dismiss="modal" aria-label="Close"></i>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End Model -->

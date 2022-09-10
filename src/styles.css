@@ -181,11 +181,12 @@ body::-webkit-scrollbar-thumb,
 }
 /* End loading */
 /* Start Overlay on Movie */
-.ancor_img{
+.ancor_img, .poster{
   position: relative;
   display: block;
 }
-.ancor_img::before{
+.ancor_img::before,
+.poster::before{
   content: 'Click Here To Show Movie Details';
   position: absolute;
   top: 0;
@@ -207,8 +208,11 @@ body::-webkit-scrollbar-thumb,
   -ms-transition: opacity .5s;
   -o-transition: opacity .5s;
 }
-.ancor_img:hover::before{
+.ancor_img:hover::before,
+.poster:hover::before
+{
   opacity: 1;
+  cursor: pointer;
 }
 /* End Overlay on Movie */
 /* Start Vote */

@@ -9,7 +9,6 @@
         <div class="col-lg-7">
           <div class="details d-flex justify-content-center flex-column">
             <h3 class="h1 mb-3">{{movieDetails.title ? movieDetails.title : movieDetails.name}}</h3>
-
             <div class="info">
 
               <div class="mb-4">
@@ -92,8 +91,8 @@
         </div>
 
         <div class="col-lg-4 offset-lg-1">
-          <div class="image">
-            <img class="w-100" [src]="imgPrefix+movieDetails.poster_path" alt="">
+          <div class="image poster" data-bs-toggle="modal" data-bs-target="#Trailer">
+            <img class=" w-100" [src]="imgPrefix+movieDetails.poster_path" alt="">
           </div>
         </div>
 
@@ -101,4 +100,25 @@
   </div>
 </section>
 <!--End For Tending Movie -->
+
+
+
+<!-- Model -->
+<div class="modal fade" id="Trailer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="TrailerLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div *ngIf="isTrailer" class="no_trailer">
+            No Trailer For Movie
+          </div>
+          <div class="Trailer_container">
+
+          </div>
+          <div class="modal-tools">
+              <i class="fas fa-times" data-bs-dismiss="modal" aria-label="Close"></i>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End Model -->
+
 
