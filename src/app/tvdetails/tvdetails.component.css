@@ -28,12 +28,7 @@ body{
   }
 }
 
-/* Start Shadow*/
-.poster::before{
-  content: 'Click to View Tv Trailer' !important;
-  font-size: 1.8rem;
-}
-/* End Shadow*/
+
 /* Start Modal */
 .modal-content{
   background-color: transparent !important;
@@ -64,9 +59,20 @@ body{
 
 .no_trailer{
   background: rgba(255, 0, 0, 0.342);
-  font-size: 3rem;
+  font-size: 2.5rem;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+.border{
+  width: 100%;
+  height: 3px;
+  border-radius: 50%;
+  background: linear-gradient(to right, red, white);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }

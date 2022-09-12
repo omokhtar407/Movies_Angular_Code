@@ -25,7 +25,11 @@ export class MoviesService {
     return  this._HttpClient.get(`https://api.themoviedb.org/3/movie/${id}?api_key=c0d379e9b2fca29da7e3e39703976bc5&language=en-US`)
   }
 
-  getMovieTrailers(movie_id:number):Observable<any>{
+  getMovie(movie_id:number):Observable<any>{
+    return  this._HttpClient.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=c0d379e9b2fca29da7e3e39703976bc5&language=en-US`)
+  }
+
+  getMovieTrailers(movie_id:number ):Observable<any>{
     return  this._HttpClient.get(`https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=c0d379e9b2fca29da7e3e39703976bc5&language=en-US`)
   }
 }

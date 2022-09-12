@@ -9,17 +9,20 @@ declare var $:any;
 export class NavbarComponent implements OnInit {
 
   isLogin:boolean = false;
-
+  isToggle:boolean = false;
   constructor(private _AuthService:AuthService) { }
 
   logOut(){
     this._AuthService.logout();
   }
-  Toggle(){
+  addCollapse(){
     $('button').next('.collapse').slideToggle(300);
+    this.isToggle = true;
   }
-  Ancor(){
+
+  removeCollapse(){
       $('.collapse').fadeOut(300);
+      this.isToggle = false;
   }
 
   ngOnInit(): void {
@@ -33,6 +36,7 @@ export class NavbarComponent implements OnInit {
         this.isLogin = false;
       }
     })
+
 
   }
 

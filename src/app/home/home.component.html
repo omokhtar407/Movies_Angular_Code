@@ -17,7 +17,7 @@
           <ng-container *ngFor="let movie of nowPlaying ">
             <ng-template carouselSlide [id]="movie.id">
               <a class="ancor_img" [routerLink]="['/moviedetails' ,movie.id]">
-                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title ? movie.title : movie">
+                <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title ? movie.title : movie.name">
                 <div class="vote">
                   {{movie.vote_average| vote}}
                 </div>

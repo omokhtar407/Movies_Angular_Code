@@ -5,7 +5,21 @@
 <!-- For Tending Movie -->
 <section id="movie_details" class="pad pb-5">
   <div class=" container">
-      <div class="row g-3">
+      <div class="row g-3 pb-5">
+        <div class="col-12">
+          <h3 class="h1 mb-3">Movie Trailer</h3>
+          <div *ngIf="isTrailer" class="no_trailer">
+            Trailer Not Available Now For This Movie
+          </div>
+          <div class="Trailer_container">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="border"></div>
+
+      <div class="row g-3 py-5">
         <div class="col-lg-7">
           <div class="details d-flex justify-content-center flex-column">
             <h3 class="h1 mb-3">{{movieDetails.title ? movieDetails.title : movieDetails.name}}</h3>
@@ -57,7 +71,7 @@
                         <span class="spans-style">Released</span>
                       </div>
                       <div class="col-8">
-                        <span>{{movieDetails.release_date}}</span>
+                        <span class="ms-3">{{movieDetails.release_date}}</span>
                       </div>
                     </div>
 
@@ -72,7 +86,7 @@
                     <span class="spans-style ">Production_Countries</span>
                   </div>
                   <div class="col-lg-8">
-                    <span *ngFor="let x of movieDetails.production_countries" class="ms-md-2 me-2 d-inline">{{x.name}}</span>
+                    <span *ngFor="let x of movieDetails.production_countries" class="ms-md-5 ms-0 d-inline">{{x.name}}</span>
                   </div>
                 </div>
               </div>
@@ -102,9 +116,10 @@
 <!--End For Tending Movie -->
 
 
+<!-- <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Trailer">View Trailer</button> -->
 
 <!-- Model -->
-<div class="modal fade" id="Trailer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="TrailerLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="Trailer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="TrailerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
           <div *ngIf="isTrailer" class="no_trailer">
@@ -118,7 +133,7 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 <!-- End Model -->
 
 

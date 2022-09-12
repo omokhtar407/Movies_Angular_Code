@@ -35,18 +35,24 @@
     font-size: 15px;
   }
 }
+.navbar-toggler{
+  padding: 0 !important;
+}
 .navbar-toggler:focus {
   box-shadow: none;
 }
 .nav-link:hover {
   color: red !important;
 }
+.bar-ico{
+  padding: 0 5px;
+}
 .d-non{
   display: none;
 }
 @media (max-width: 767px) {
   .collapse {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
   }
   .nav-link {
     padding: 0.5rem  0.7rem !important;

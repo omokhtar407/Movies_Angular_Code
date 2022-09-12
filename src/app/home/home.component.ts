@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   imgPrefix:string='https://image.tmdb.org/t/p/w500/';
   constructor(private _MoviesService:MoviesService ,private _NgxSpinnerService:NgxSpinnerService) { }
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -47,28 +48,28 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._NgxSpinnerService.show();
 
-    this._MoviesService.getTrending('movie',1).subscribe((respons)=>{
-      this.trendingMovies = respons.results;
+    this._MoviesService.getTrending('movie',1).subscribe((response)=>{
+      this.trendingMovies = response.results;
       this._NgxSpinnerService.hide();
     });
 
-    this._MoviesService.getMoviesTypes('now_playing').subscribe((respons)=>{
-      this.nowPlaying = respons.results;
+    this._MoviesService.getMoviesTypes('now_playing').subscribe((response)=>{
+      this.nowPlaying = response.results;
       this._NgxSpinnerService.hide();
     });
 
-    this._MoviesService.getMoviesTypes('popular').subscribe((respons)=>{
-      this.popular = respons.results;
+    this._MoviesService.getMoviesTypes('popular').subscribe((response)=>{
+      this.popular = response.results;
       this._NgxSpinnerService.hide();
     });
 
-    this._MoviesService.getMoviesTypes('top_rated').subscribe((respons)=>{
-      this.topRated = respons.results;
+    this._MoviesService.getMoviesTypes('top_rated').subscribe((response)=>{
+      this.topRated = response.results;
       this._NgxSpinnerService.hide();
     });
 
-    this._MoviesService.getMoviesTypes('upcoming').subscribe((respons)=>{
-      this.upComing = respons.results;
+    this._MoviesService.getMoviesTypes('upcoming').subscribe((response)=>{
+      this.upComing = response.results;
       this._NgxSpinnerService.hide();
     });
     (error:any)=>{

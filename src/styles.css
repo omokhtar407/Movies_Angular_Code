@@ -181,12 +181,11 @@ body::-webkit-scrollbar-thumb,
 }
 /* End loading */
 /* Start Overlay on Movie */
-.ancor_img, .poster{
+.ancor_img{
   position: relative;
   display: block;
 }
-.ancor_img::before,
-.poster::before{
+.ancor_img::before{
   content: 'Click Here To Show Movie Details';
   position: absolute;
   top: 0;
@@ -208,8 +207,7 @@ body::-webkit-scrollbar-thumb,
   -ms-transition: opacity .5s;
   -o-transition: opacity .5s;
 }
-.ancor_img:hover::before,
-.poster:hover::before
+.ancor_img:hover::before
 {
   opacity: 1;
   cursor: pointer;

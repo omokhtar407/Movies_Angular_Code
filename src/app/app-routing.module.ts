@@ -1,3 +1,4 @@
+import { SliderComponent } from './slider/slider.component';
 import { TvdetailsComponent } from './tvdetails/tvdetails.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NgModule } from '@angular/core';

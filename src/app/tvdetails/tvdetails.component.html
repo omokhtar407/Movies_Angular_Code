@@ -5,6 +5,20 @@
 <!-- For Tending Tv -->
 <section id="tv_details" class="pad pb-5">
   <div class=" container">
+      <div class="row g-3 pb-5">
+        <div class="col-12">
+          <h3 class="h1 mb-3">Tv Trailer</h3>
+          <div *ngIf="isTrailer" class="no_trailer">
+            Trailer Not Available Now For This Tv
+          </div>
+          <div class="Trailer_container">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="border"></div>
+
       <div class="row g-3 py-5">
         <div class="col-lg-7">
           <div class="details d-flex justify-content-center flex-column">
@@ -92,7 +106,7 @@
         </div>
 
         <div class="col-lg-4 offset-lg-1">
-          <div class="image poster" data-bs-toggle="modal" data-bs-target="#Trailer">
+          <div class="image poster" >
             <img class="w-100" [src]="imgPrefix+tvDetails.poster_path" [alt]="tvDetails.name" alt="">
           </div>
         </div>
@@ -102,8 +116,11 @@
 </section>
 <!--End For Tending Movie -->
 
+
+<!-- <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Trailer">View Trailer</button> -->
+
 <!-- Model -->
-<div class="modal fade" id="Trailer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="TrailerLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="Trailer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="TrailerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
           <div *ngIf="isTrailer" class="no_trailer">
@@ -117,5 +134,5 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 <!-- End Model -->

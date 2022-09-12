@@ -26,17 +26,18 @@ export class MoviedetailsComponent implements OnInit {
       this.movieTrailers = response.results;
       this.isTrailer = true;
       this.movieTrailers.forEach((trailer) => {
-        if(trailer.name == 'Official Trailer' || trailer.type == 'Trailer'){
+        if(trailer.key){
           this.isTrailer = false;
           let VideoKey = trailer.key;
           let Trailer_container:any = document.querySelector('.Trailer_container');
-          Trailer_container.innerHTML = `<iframe width="100%" height="500"
+          Trailer_container.innerHTML = `<iframe width="100%" height="400"
                                             src="https://www.youtube.com/embed/${VideoKey}"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write;
                                             encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen>
                                         </iframe>`;
+          this._NgxSpinnerService.hide();
         }
       });
     })
