@@ -1,43 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-declare var $:any;
+declare var $: any;
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  isLogin: boolean = false;
+  isToggle: boolean = false;
+  constructor(private _AuthService: AuthService) {}
 
-  isLogin:boolean = false;
-  isToggle:boolean = false;
-  constructor(private _AuthService:AuthService) { }
-
-  logOut(){
+  logOut() {
     this._AuthService.logout();
   }
-  addCollapse(){
+  addCollapse() {
     $('button').next('.collapse').slideToggle(300);
     this.isToggle = true;
   }
 
-  removeCollapse(){
-      $('.collapse').fadeOut(300);
-      this.isToggle = false;
+  removeCollapse() {
+    $('.collapse').fadeOut(300);
+    this.isToggle = false;
   }
 
   ngOnInit(): void {
-
-    this._AuthService.userData.subscribe(()=>{
-
-      if(this._AuthService.userData.getValue() !=null){
+    this._AuthService.userData.subscribe(() => {
+      if (this._AuthService.userData.getValue() != null) {
         this.isLogin = true;
-      }
-      else{
+      } else {
         this.isLogin = false;
       }
-    })
-
-
+    });
   }
-
 }

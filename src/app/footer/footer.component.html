@@ -1,70 +1,116 @@
 <!-- Start Footer -->
 <footer class="pt-5">
   <div class="overlay"></div>
-    <div class="container position-relative">
-      <div class="row g-4">
-          <div class="col-lg-3 col-md-6 ">
-              <div class="item">
-                  <div class="logo mb-4">
-                    <a class=" pt-0" routerLink="">Movie<span>Box</span></a>
-                  </div>
-                  <div class="footer_phone mb-2 "><i class="fas fa-phone me-2 text-white fa-fw"></i>01029296569</div>
-                  <div class="footer_email mb-2"><i class="fas fa-envelope-square me-2 text-white fa-fw"></i>omokhtar407@gmail.com</div>
-                  <div class="footer_contact_text mb-3"><i class="fas fa-map-marker-alt me-2 text-white fa-fw"></i>Egypt, Khalid Zahran Street, Qaliub</div>
-                  <div class="footer_social d-flex mt-3">
-                    <a href="https://www.linkedin.com/in/omar-mokhtar-737536200" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/omokhtar407" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="http://wa.me/+201145466042" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:omokhar407@gmail.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
-                  </div>
-              </div>
+  <div class="container position-relative">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="item">
+          <div class="logo mb-4">
+            <a class="pt-0" routerLink="">Movie<span>Box</span></a>
           </div>
-          <div class="col-lg-3 col-md-6">
-              <div class="item">
-                  <h3 class="h6 mb-3 fw-bold">Legal</h3>
-                  <ul class="list-unstyled">
-                    <li><a routerLink="">Support</a></li>
-                    <li><a routerLink="">Privacy Policy</a></li>
-                    <li><a routerLink="">Terms of Use</a></li>
-                    <li><a routerLink="">Affiliate Program</a></li>
-                    <li><a routerLink="">Security</a></li>
-                  </ul>
-              </div>
+          <div class="footer_phone mb-2">
+            <i class="fas fa-phone me-2 text-white fa-fw"></i>01029296569
           </div>
-          <div class="col-lg-3 col-md-6 ">
-              <div class="item">
-                  <h3 class="h6 mb-3 fw-bold  ">Account</h3>
-                  <ul class="list-unstyled">
-                    <li><a routerLink="">My Account</a></li>
-                    <li><a routerLink="">Watchfirst</a></li>
-                    <li><a routerLink="">Collections</a></li>
-                    <li><a routerLink="">User Guide</a></li>
-                  </ul>
-              </div>
+          <div class="footer_email mb-2">
+            <i class="fas fa-envelope-square me-2 text-white fa-fw"></i
+            >omokhtar407@gmail.com
           </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="item">
-                <h3 class="h6 mb-3 fw-bold">NewSletter</h3>
-                <p>Subscribe to our newsletter system now to get lastest news from us</p>
-                <form [formGroup]='submitForm' (ngSubmit)='SubmitForm(submitForm)'>
-                  <div class="group mb-2">
-                    <input formControlName='email' class="form-control mb-2 rounded-0" type="email" name="email" id="email" placeholder="Enter your email">
-                    <div *ngIf="submitForm.get('email')?.errors != null  && submitForm.get('email')?.touched"
-                      class="text-danger">
-                      <p *ngIf="submitForm.get('email')?.errors?.required">Email is required</p>
-                      <p *ngIf="submitForm.get('email')?.errors?.email">Email is invalid</p>
-                    </div>
-                  </div>
-                  <button class="btn  d-block rounded-0 fw-bold" type="submit">Subscribe</button>
-                </form>
+          <div class="footer_contact_text mb-3">
+            <i class="fas fa-map-marker-alt me-2 text-white fa-fw"></i>Egypt,
+            Khalid Zahran Street, Qaliub
+          </div>
+          <div class="footer_social d-flex mt-3">
+            <a
+              href="https://www.linkedin.com/in/omar-mokhtar-737536200"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://github.com/omokhtar407" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="http://wa.me/+201145466042" target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a href="mailto:omokhar407@gmail.com" target="_blank"
+              ><i class="fas fa-envelope-square"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="item">
+          <h3 class="h6 mb-3 fw-bold">Legal</h3>
+          <ul class="list-unstyled">
+            <li><a routerLink="">Support</a></li>
+            <li><a routerLink="">Privacy Policy</a></li>
+            <li><a routerLink="">Terms of Use</a></li>
+            <li><a routerLink="">Affiliate Program</a></li>
+            <li><a routerLink="">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="item">
+          <h3 class="h6 mb-3 fw-bold">Account</h3>
+          <ul class="list-unstyled">
+            <li><a routerLink="">My Account</a></li>
+            <li><a routerLink="">Watchfirst</a></li>
+            <li><a routerLink="">Collections</a></li>
+            <li><a routerLink="">User Guide</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="item">
+          <h3 class="h6 mb-3 fw-bold">NewSletter</h3>
+          <p>
+            Subscribe to our newsletter system now to get lastest news from us
+          </p>
+          <form [formGroup]="submitForm" (ngSubmit)="SubmitForm(submitForm)">
+            <div class="group mb-2">
+              <input
+                formControlName="email"
+                class="form-control mb-2 rounded-0"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+              />
+              <div
+                *ngIf="
+                  submitForm.get('email')?.errors != null &&
+                  submitForm.get('email')?.touched
+                "
+                class="text-danger"
+              >
+                <p *ngIf="submitForm.get('email')?.errors?.required">
+                  Email is required
+                </p>
+                <p *ngIf="submitForm.get('email')?.errors?.email">
+                  Email is invalid
+                </p>
+              </div>
             </div>
+            <button class="btn d-block rounded-0 fw-bold" type="submit">
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
     </div>
-    <hr>
-    <div class="copyright pb-4 position-relative">
-          <p class="mb-0 text-center">Copyright &copy;{{Year}} All rights reserved | This website is made by <a rel="noopener" class="triple" href="https://omokhtar407.github.io/Master_Portfolio/" target="_blank">OmAr El-MoKhTaR</a> </p>
-    </div>
+  </div>
+  <hr />
+  <div class="copyright pb-4 position-relative">
+    <p class="mb-0 text-center">
+      Copyright &copy;{{ Year }} All rights reserved | This website is made by
+      <a
+        rel="noopener"
+        class="triple"
+        href="https://omokhtar407.github.io/Master_Portfolio/"
+        target="_blank"
+        >OmAr El-MoKhTaR</a
+      >
+    </p>
+  </div>
 </footer>
 <!-- End Footer -->
-

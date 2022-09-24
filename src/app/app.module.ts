@@ -25,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { TvdetailsComponent } from './tvdetails/tvdetails.component';
 import { VotePipe } from './vote.pipe';
+import { ImagePipe } from './image.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { VotePipe } from './vote.pipe';
     TvComponent,
     SearchPipePipe,
     TvdetailsComponent,
-    VotePipe
+    VotePipe,
+    ImagePipe
   ],
   imports: [
     BrowserModule,

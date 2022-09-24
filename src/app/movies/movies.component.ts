@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from './../movies.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgxSpinnerService } from "ngx-spinner";
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent implements OnInit {
   totalPages: number = 1;
-  visablePages: any[] = [];
+  visiblePages: any[] = [];
   currentPage: number = 1;
-  terms: string = "";
+  terms: string = '';
   trendingMovies: any[] = [];
-  imgPrefx: string = "https://image.tmdb.org/t/p/w500";
-  constructor(private _MoviesService: MoviesService ,private _NgxSpinnerService:NgxSpinnerService) { }
+  imgPrefix: string = 'https://image.tmdb.org/t/p/w500';
+  placeholder: string = 'https://via.placeholder.com/150';
+  constructor(
+    private _MoviesService: MoviesService,
+    private _NgxSpinnerService: NgxSpinnerService
+  ) {}
 
   searchForm: FormGroup = new FormGroup({
-    "term": new FormControl(null, [Validators.pattern(/^((?!(<|>)).)+$/)])
-  })
+    term: new FormControl(null, [Validators.pattern(/^((?!(<|>)).)+$/)]),
+  });
 
   search(searchForm: FormGroup) {
-      this.terms = searchForm.controls.term.value;
+    this.terms = searchForm.controls.term.value;
   }
 
   ngOnInit(): void {
@@ -32,45 +36,47 @@ export class MoviesComponent implements OnInit {
   getMovies(page: number) {
     this._NgxSpinnerService.show();
     this.currentPage = page;
-    this._MoviesService.getTrending("movie", page).subscribe((response) => {
+    this._MoviesService.getTrending('movie', page).subscribe((response) => {
       this.trendingMovies = response.results;
       this.totalPages = response.total_pages;
       this._NgxSpinnerService.hide();
       this.setPages();
     });
 
-    (error:any)=>{
+    (error: any) => {
       this._NgxSpinnerService.hide();
-    }
+    };
   }
 
   setPages() {
     if (this.currentPage == 1) {
       if (this.totalPages == 1) {
-        this.visablePages = [1];
-      }
-      else if (this.totalPages == 2) {
-        this.visablePages = [1, 2];
-      }
-      else {
-        this.visablePages = [1, 2, 3];
+        this.visiblePages = [1];
+      } else if (this.totalPages == 2) {
+        this.visiblePages = [1, 2];
+      } else {
+        this.visiblePages = [1, 2, 3];
       }
     }
   }
 
   changePage(term: any) {
-    if (term == "next" && this.visablePages.includes(this.totalPages) == false) {
-      this.visablePages.forEach((part, index) => { this.visablePages[index]++ });
+    if (
+      term == 'next' &&
+      this.visiblePages.includes(this.totalPages) == false
+    ) {
+      this.visiblePages.forEach((part, index) => {
+        this.visiblePages[index]++;
+      });
       this.getMovies(this.currentPage + 1);
-    }
-    else if (term == "prev" && this.visablePages[0] > 1) {
-      this.visablePages.forEach((part, index) => { this.visablePages[index]-- })
+    } else if (term == 'prev' && this.visiblePages[0] > 1) {
+      this.visiblePages.forEach((part, index) => {
+        this.visiblePages[index]--;
+      });
       this.getMovies(this.currentPage - 1);
-    }
-    else if (term == "prev" && this.currentPage > 1) {
+    } else if (term == 'prev' && this.currentPage > 1) {
       this.getMovies(this.currentPage - 1);
-    }
-    else if (term == "next" && this.currentPage < this.totalPages) {
+    } else if (term == 'next' && this.currentPage < this.totalPages) {
       this.getMovies(this.currentPage + 1);
     }
   }
@@ -79,5 +85,4 @@ export class MoviesComponent implements OnInit {
     this.currentPage = page;
     this.getMovies(page);
   }
-
 }

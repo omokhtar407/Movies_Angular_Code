@@ -1,65 +1,70 @@
-#about,#best_movies,#video_everyone,#watch_movies{
+#about,
+#best_movies,
+#video_everyone,
+#watch_movies {
   padding: 6rem 0;
 }
-.backGround
-{
+.backGround {
   position: relative;
   text-align: center;
-  padding:12rem 0rem ;
+  padding: 12rem 0rem;
   background-image: url(../../assets/imgs/black-widow-d-5.png);
   background-size: cover;
   background-attachment: fixed;
   background-position: 50% 30%;
 }
-#about,#watch_movies{
+#about,
+#watch_movies {
   background-color: #090808;
 }
-p{
+p {
   color: #f5e7ebcc;
 }
-.info > small{
-  color:red;
+.info > small {
+  color: red;
 }
-small{
+small {
   font-weight: 500;
 }
-#best_movies{
+#best_movies {
   background-image: url(../../assets/imgs/watch.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   position: relative;
 }
-#best_movies h2 ,#watch_movies h2{
+#best_movies h2,
+#watch_movies h2 {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
 }
-#best_movies p ,#watch_movies p{
+#best_movies p,
+#watch_movies p {
   color: #fff;
   margin-bottom: 1.5rem;
 }
-.btn{
+.btn {
   background-color: red !important;
   transition: background-color 0.3s;
 }
-.btn:hover{
+.btn:hover {
   background-color: rgba(255, 0, 0, 0.698) !important;
 }
-#video_everyone{
+#video_everyone {
   background-color: #000;
   overflow: hidden;
 }
-#video_everyone .item{
+#video_everyone .item {
   background-color: #090808;
 }
-#video_everyone h3{
+#video_everyone h3 {
   font-size: 1.5rem;
   transition: color 0.3s;
 }
-#video_everyone p{
+#video_everyone p {
   font-size: 0.8rem;
 }
-#video_everyone .item:hover h3{
+#video_everyone .item:hover h3 {
   color: red;
 }

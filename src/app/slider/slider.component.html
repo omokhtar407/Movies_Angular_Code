@@ -8,10 +8,12 @@
   <p class="ngx_spinner">Loading...</p>
 </ngx-spinner>
 
-
 <header class="vh-100 d-flex align-items-end">
   <div class="header_bg">
-    <img [src]="imgPrefix + backGroundImg" [alt]="movieTitle" />
+    <img
+      [src]="imgPrefix + backGroundImg | image: placeholder"
+      [alt]="movieTitle"
+    />
   </div>
   <div class="container slider-container slider_content">
     <div class="row g-3 justify-content-center align-items-center">
@@ -19,7 +21,7 @@
         <div class="row g-3 justify-content-center align-items-center">
           <div class="col-md-4">
             <div class="movie_poster">
-              <img [src]="imgSrc" [alt]="movieTitle" />
+              <img [src]="imgSrc | image: placeholder" [alt]="movieTitle" />
             </div>
           </div>
           <div class="col-md-8 ps-md-4">
@@ -38,7 +40,7 @@
               <p>{{ movieOverview }}</p>
             </div>
             <div class="movie_tools">
-              <a class="btn"  data-bs-toggle="modal" data-bs-target="#Trailer"
+              <a class="btn" data-bs-toggle="modal" data-bs-target="#Trailer"
                 ><i class="fas fa-play-circle"></i> View Trailer</a
               >
               <a class="btn" [routerLink]="['/moviedetails', movieId]"
@@ -52,17 +54,22 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-lg-10">
         <owl-carousel-o [options]="customOptions">
-          <ng-container *ngFor="let movie of headerTrendingMovies ;let i = index">
+          <ng-container
+            *ngFor="let movie of headerTrendingMovies; let i = index"
+          >
             <ng-template carouselSlide [id]="movie.id">
-              <a class="owl_ancor_img" (click)=" getMovieId(movie.id)">
+              <a class="owl_ancor_img" (click)="getMovieId(movie.id)">
                 <img
                   class="owl_img"
-                  [src]="imgPrefix + movie.poster_path"
+                  [src]="imgPrefix + movie.poster_path | image: placeholder"
                   [alt]="movie.title ? movie.title : movie.name"
                 />
-                <span [ngClass]=" i == 0 ? 'owl_span_active' : '' "  (click)="ActiveOwlSpan($event);" class="owl_span">{{
-                  movie.title ? movie.title : movie.name
-                }}</span>
+                <span
+                  [ngClass]="i == 0 ? 'owl_span_active' : ''"
+                  (click)="ActiveOwlSpan($event)"
+                  class="owl_span"
+                  >{{ movie.title ? movie.title : movie.name }}</span
+                >
               </a>
             </ng-template>
           </ng-container>
@@ -86,11 +93,17 @@
     <div class="modal-content">
       <div *ngIf="isTrailer" class="no_trailer">No Trailer For Movie</div>
       <div *ngIf="!isTrailer" class="Trailer_container">
-        <iframe class="Trailer" src="" width="100%" height="300"
-          title="YouTube video player" frameborder="0"
+        <iframe
+          class="Trailer"
+          src=""
+          width="100%"
+          height="300"
+          title="YouTube video player"
+          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write;
           encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
+          allowfullscreen
+        >
         </iframe>
       </div>
       <div class="modal-tools">

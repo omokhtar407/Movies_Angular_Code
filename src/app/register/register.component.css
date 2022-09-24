@@ -1,12 +1,12 @@
-#signUp{
+#signUp {
   background-image: url(../../assets/imgs/face.jpg);
   background-size: cover;
   background-position: center center;
 }
-.signup_form{
+.signup_form {
   background-color: rgba(0, 0, 0, 0.7);
 }
-.logo{
+.logo {
   text-transform: capitalize;
   font-weight: 700;
   font-size: 1.6rem;
@@ -15,34 +15,34 @@
   margin-bottom: 1.5rem;
   text-align: center;
 }
-.logo span{
+.logo span {
   color: red;
 }
-h1{
+h1 {
   font-size: 1.2rem;
 }
-p{
+p {
   margin-bottom: 0;
 }
-.form-control{
+.form-control {
   background-color: transparent;
   color: #fff !important;
   border: 1px solid #fff !important;
 }
-.form-control::placeholder{
+.form-control::placeholder {
   color: #ccc;
 }
-.form-control:focus,.btn:focus{
+.form-control:focus,
+.btn:focus {
   border-color: red !important;
   box-shadow: 0 0 0 0.25rem #b71c1c75 !important;
 }
-.btn{
-  background-color: red ;
+.btn {
+  background-color: red;
   display: block;
   width: 100%;
   transition: background-color 0.3s;
 }
-.btn:hover{
+.btn:hover {
   background-color: rgba(255, 0, 0, 0.637) !important;
 }
-

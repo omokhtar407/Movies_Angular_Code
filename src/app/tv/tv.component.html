@@ -1,51 +1,87 @@
-<ngx-spinner bdColor="#000" size="medium" color="white" type="ball-clip-rotate-pulse" [fullScreen]="true">
-  <p class="ngx_spinner" > Loading... </p>
+<ngx-spinner
+  bdColor="#000"
+  size="medium"
+  color="white"
+  type="ball-clip-rotate-pulse"
+  [fullScreen]="true"
+>
+  <p class="ngx_spinner">Loading...</p>
 </ngx-spinner>
 
 <section id="Tv">
   <div class="container">
-      <div class="d-flex justify-content-center align-items-center flex-column py-5">
+    <div
+      class="d-flex justify-content-center align-items-center flex-column py-5"
+    >
+      <form [formGroup]="searchForm" class="form-floating my-3 w-50">
+        <input
+          (keyup)="search(searchForm)"
+          formControlName="term"
+          type="text"
+          class="form-control rounded-0 py-2 px-3"
+          placeholder="Search...."
+        />
+      </form>
 
-          <form [formGroup]="searchForm" class="form-floating my-3 w-50 ">
-              <input (keyup)="search(searchForm)" formControlName="term" type="text"
-                  class="form-control rounded-0 py-2 px-3" placeholder="Search....">
-          </form>
-
-          <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                      <a (click)="changePage('prev')" class="page-link rounded-0 text-white bg-transparent border-white" aria-label="Previous">
-                          <span aria-hidden="true">Prev</span>
-                      </a>
-                  </li>
-                  <li (click)="getCurrentPage(page)" *ngFor="let page of visablePages" class="page-item"><a [ngClass]="{'active': currentPage==page}" class="page-link text-white bg-transparent border-white">{{page}}</a></li>
-                  <li class="page-item">
-                      <a (click)="changePage('next')" class="page-link rounded-0 text-white bg-transparent border-white" aria-label="Next">
-                          <span aria-hidden="true">Next</span>
-                      </a>
-                  </li>
-              </ul>
-          </nav>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a
+              (click)="changePage('prev')"
+              class="page-link rounded-0 text-white bg-transparent border-white"
+              aria-label="Previous"
+            >
+              <span aria-hidden="true">Prev</span>
+            </a>
+          </li>
+          <li
+            (click)="getCurrentPage(page)"
+            *ngFor="let page of visiblePages"
+            class="page-item"
+          >
+            <a
+              [ngClass]="{ active: currentPage == page }"
+              class="page-link text-white bg-transparent border-white"
+              >{{ page }}</a
+            >
+          </li>
+          <li class="page-item">
+            <a
+              (click)="changePage('next')"
+              class="page-link rounded-0 text-white bg-transparent border-white"
+              aria-label="Next"
+            >
+              <span aria-hidden="true">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row g-4">
+      <div
+        class="d-flex align-items-center justify-content-center my-5"
+        *ngIf="(trendingTV | searchPipe: terms).length == 0"
+      >
+        <h2>NO Match</h2>
       </div>
-      <div class="row g-4">
 
-          <div class="d-flex align-items-center justify-content-center my-5"
-          *ngIf="(trendingTV|searchPipe:terms).length==0">
-              <h2>
-                  NO Match
-              </h2>
-          </div>
-
-          <div *ngFor="let tv of trendingTV|searchPipe:terms" class="col-lg-2 col-md-4 col-sm-6 col-12">
-              <div class="movies position-relative">
-                  <a class="ancor_img" [routerLink]="['/tvdetails',tv.id]">
-                    <img class="img-fluid" [src]="imgPrefx+tv.poster_path"  [alt]="tv.title ? tv.title :tv.name" >
-                    <div class="vote">
-                        {{tv.vote_average | vote}}
-                    </div>
-                  </a>
-              </div>
-          </div>
+      <div
+        *ngFor="let tv of trendingTV | searchPipe: terms"
+        class="col-lg-2 col-md-4 col-sm-6 col-12"
+      >
+        <div class="movies position-relative">
+          <a class="ancor_img" [routerLink]="['/tvdetails', tv.id]">
+            <img
+              class="img-fluid"
+              [src]="imgPrefix + tv.poster_path | image: placeholder"
+              [alt]="tv.title ? tv.title : tv.name"
+            />
+            <div class="vote">
+              {{ tv.vote_average | vote }}
+            </div>
+          </a>
+        </div>
       </div>
+    </div>
   </div>
 </section>

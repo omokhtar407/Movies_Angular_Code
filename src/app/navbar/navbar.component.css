@@ -1,8 +1,7 @@
-
 /* Start Nav */
 .navbar {
   z-index: 5;
-  padding:  0.5rem !important;
+  padding: 0.5rem !important;
   background-color: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 767px) {
@@ -11,16 +10,16 @@
     max-width: 100% !important;
   }
 }
-.navbar-brand{
+.navbar-brand {
   text-transform: capitalize;
   font-weight: 700;
   font-size: 1.6rem;
   color: #fff;
 }
-.navbar-brand:hover{
+.navbar-brand:hover {
   color: #fff !important;
 }
-.navbar-brand span{
+.navbar-brand span {
   color: red;
 }
 .nav-link {
@@ -35,7 +34,7 @@
     font-size: 15px;
   }
 }
-.navbar-toggler{
+.navbar-toggler {
   padding: 0 !important;
 }
 .navbar-toggler:focus {
@@ -44,10 +43,10 @@
 .nav-link:hover {
   color: red !important;
 }
-.bar-ico{
+.bar-ico {
   padding: 0 5px;
 }
-.d-non{
+.d-non {
   display: none;
 }
 @media (max-width: 767px) {
@@ -55,27 +54,30 @@
     background-color: rgba(0, 0, 0, 0.7);
   }
   .nav-link {
-    padding: 0.5rem  0.7rem !important;
+    padding: 0.5rem 0.7rem !important;
     color: #fff !important;
   }
 }
-.logout,.signin{
+.logout,
+.signin {
   background-color: red;
   border-radius: 0 !important;
   padding: 0.3rem 1.2rem !important;
-  border:1px solid red;
+  border: 1px solid red;
   text-align: center;
 }
-.signup{
+.signup {
   border-radius: 0 !important;
   padding: 0.3rem 1.2rem !important;
-  border:1px solid red;
+  border: 1px solid red;
   text-align: center;
 }
-.logout:hover,.signin:hover,.signup:hover{
-  background-color:  rgba(255, 0, 0, 0.698) !important;
+.logout:hover,
+.signin:hover,
+.signup:hover {
+  background-color: rgba(255, 0, 0, 0.698) !important;
   color: #fff !important;
-  border:1px solid rgba(255, 0, 0, 0.698) !important;
+  border: 1px solid rgba(255, 0, 0, 0.698) !important;
 }
 
 /* End Nav */

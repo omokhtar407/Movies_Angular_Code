@@ -1,120 +1,148 @@
-<ngx-spinner bdColor="#000" size="medium" color="white" type="ball-clip-rotate-pulse" [fullScreen]="true">
-  <p class="ngx_spinner" > Loading... </p>
+<ngx-spinner
+  bdColor="#000"
+  size="medium"
+  color="white"
+  type="ball-clip-rotate-pulse"
+  [fullScreen]="true"
+>
+  <p class="ngx_spinner">Loading...</p>
 </ngx-spinner>
 
 <!-- For Tending Movie -->
 <section id="movie_details" class="pad pb-5">
-  <div class=" container">
-      <div class="row g-3 pb-5">
-        <div class="col-12">
-          <h3 class="h1 mb-3">Movie Trailer</h3>
-          <div *ngIf="isTrailer" class="no_trailer">
-            Trailer Not Available Now For This Movie
-          </div>
-          <div class="Trailer_container">
+  <div class="container">
+    <div class="row g-3 py-5">
+      <div class="col-lg-7">
+        <div class="details d-flex justify-content-center flex-column">
+          <h3 class="h1 mb-3">
+            {{ movieDetails.title ? movieDetails.title : movieDetails.name }}
+          </h3>
+          <div class="info">
+            <div class="mb-4">
+              <span class="spans-style mb-3">Overview</span>
+              <p>{{ movieDetails.overview }}</p>
+            </div>
 
-          </div>
-        </div>
-      </div>
-
-      <div class="border"></div>
-
-      <div class="row g-3 py-5">
-        <div class="col-lg-7">
-          <div class="details d-flex justify-content-center flex-column">
-            <h3 class="h1 mb-3">{{movieDetails.title ? movieDetails.title : movieDetails.name}}</h3>
-            <div class="info">
-
-              <div class="mb-4">
-                <span class="spans-style mb-3">Overview</span>
-                <p>{{movieDetails.overview}}</p>
-              </div>
-
-              <div class="mb-4 ">
-                <div class="row g-3">
-                  <div class="col-sm-3">
-                    <span class="spans-style ">Languages</span>
-                  </div>
-                  <div class="col-sm-9 d-flex flex-wrap">
-                    <span *ngFor="let x of movieDetails.spoken_languages" class="me-3">{{x.name}}</span>
-                  </div>
+            <div class="mb-4">
+              <div class="row g-3">
+                <div class="col-sm-3">
+                  <span class="spans-style">Languages</span>
+                </div>
+                <div class="col-sm-9 d-flex flex-wrap">
+                  <span
+                    *ngFor="let x of movieDetails.spoken_languages"
+                    class="me-3"
+                    >{{ x.name }}</span
+                  >
                 </div>
               </div>
+            </div>
 
-              <div class="mb-4">
-                <div class="row g-3">
-                  <div class="col-sm-3">
-                    <span class="spans-style ">Genres</span>
-                  </div>
-                  <div class="col-sm-9 d-flex flex-wrap">
-                    <span *ngFor="let x of movieDetails.genres" class="me-3">{{x.name}}</span>
-                  </div>
+            <div class="mb-4">
+              <div class="row g-3">
+                <div class="col-sm-3">
+                  <span class="spans-style">Genres</span>
+                </div>
+                <div class="col-sm-9 d-flex flex-wrap">
+                  <span *ngFor="let x of movieDetails.genres" class="me-3">{{
+                    x.name
+                  }}</span>
                 </div>
               </div>
+            </div>
 
-              <div class="mb-4 ">
-                <div class="row g-3">
-                  <div class="col-sm-6">
-                    <div class="row g-2">
-                      <div class="col-3">
-                        <span class="spans-style">Vote</span>
-                      </div>
-                      <div class="col-9">
-                        <span>{{movieDetails.vote_average}} Rate</span>
-                      </div>
+            <div class="mb-4">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="row g-2">
+                    <div class="col-3">
+                      <span class="spans-style">Vote</span>
+                    </div>
+                    <div class="col-9">
+                      <span>{{ movieDetails.vote_average }} Rate</span>
                     </div>
                   </div>
+                </div>
 
-                  <div class="col-sm-6 ">
-                    <div class="row g-2">
-                      <div class="col-4">
-                        <span class="spans-style">Released</span>
-                      </div>
-                      <div class="col-8">
-                        <span class="ms-3">{{movieDetails.release_date}}</span>
-                      </div>
+                <div class="col-sm-6">
+                  <div class="row g-2">
+                    <div class="col-4">
+                      <span class="spans-style">Released</span>
                     </div>
-
-
+                    <div class="col-8">
+                      <span class="ms-3">{{ movieDetails.release_date }}</span>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="mb-4">
-                <div class="row g-3">
-                  <div class="col-lg-4">
-                    <span class="spans-style ">Production_Countries</span>
-                  </div>
-                  <div class="col-lg-8">
-                    <span *ngFor="let x of movieDetails.production_countries" class="ms-md-5 ms-0 d-inline">{{x.name}}</span>
-                  </div>
+            <div class="mb-4">
+              <div class="row g-3">
+                <div class="col-lg-4">
+                  <span class="spans-style">Production_Countries</span>
+                </div>
+                <div class="col-lg-8">
+                  <span
+                    *ngFor="let x of movieDetails.production_countries"
+                    class="ms-md-5 ms-0 d-inline"
+                    >{{ x.name }}</span
+                  >
                 </div>
               </div>
+            </div>
 
-              <div >
-                <span class="spans-style mb-3 me-3">production_Companies</span>
-                <div *ngIf="movieDetails.production_companies" class="row g-4">
-                  <div  *ngFor="let x of movieDetails.production_companies?.slice(0,4)" class="col company_img_container">
-                      <img *ngIf="x.logo_path" class="company-img " [src]="imgPrefix+x.logo_path" alt="">
-                  </div>
+            <div>
+              <span class="spans-style mb-3 me-3">production_Companies</span>
+              <div *ngIf="movieDetails.production_companies" class="row g-4">
+                <div
+                  *ngFor="
+                    let x of movieDetails.production_companies?.slice(0, 4)
+                  "
+                  class="col company_img_container"
+                >
+                  <img
+                    *ngIf="x.logo_path"
+                    class="company-img"
+                    [src]="imgPrefix + x.logo_path | image: placeholder"
+                    alt=""
+                  />
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 offset-lg-1">
-          <div class="image poster" data-bs-toggle="modal" data-bs-target="#Trailer">
-            <img class=" w-100" [src]="imgPrefix+movieDetails.poster_path" alt="">
-          </div>
-        </div>
-
       </div>
+
+      <div class="col-lg-4 offset-lg-1">
+        <div
+          class="image poster"
+          data-bs-toggle="modal"
+          data-bs-target="#Trailer"
+        >
+          <img
+            class="w-100"
+            [src]="imgPrefix + movieDetails.poster_path | image: placeholder"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="border"></div>
+
+    <div class="row g-3 pb-5">
+      <div class="col-12">
+        <h3 class="h1 mb-3">Movie Trailer</h3>
+        <div *ngIf="isTrailer" class="no_trailer">
+          Trailer Not Available Now For This Movie
+        </div>
+        <div *ngIf="!isTrailer" class="Trailer_container"></div>
+      </div>
+    </div>
   </div>
 </section>
 <!--End For Tending Movie -->
-
 
 <!-- <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Trailer">View Trailer</button> -->
 
@@ -135,5 +163,3 @@
   </div>
 </div> -->
 <!-- End Model -->
-
-
