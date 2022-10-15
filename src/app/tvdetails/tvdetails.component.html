@@ -158,13 +158,13 @@
     <div class="border"></div>
 
     <div class="row g-4 justify-content-center">
-      <!-- <div class="col-12"> -->
         <h3 class="h1 mb-3">Tv Cast</h3>
-        <div [ngClass]="tvCast.length < 4 ? 'col-md-6 col-12' : 'col-12'">
+        <div *ngIf=" tvCast ;else noCast" [ngClass]="  tvCast.length < 4 ? 'col-md-6 col-12' : 'col-12'
+                        ">
           <owl-carousel-o [options]="customOptions">
             <ng-container *ngFor="let cast of tvCast">
               <ng-template carouselSlide [id]="cast.id">
-                <a class="ancor_img" [routerLink]="['/castDetails', cast.id]">
+                <a class="ancor_img" [routerLink]="['/castDetails', cast.id , cast.gender]">
                   <img
                     class="w-100"
                     [src]="cast.profile_path ? imgPrefix+cast.profile_path : ''   | image: placeholder"
@@ -178,8 +178,11 @@
             </ng-container>
           </owl-carousel-o>
         </div>
-      </div>
+
+        <ng-template #noCast>
+          <p class="fw-bold fs-3 text-center" >No Cast Available</p>
+        </ng-template>
     </div>
-  <!-- </div> -->
+  </div>
 </section>
 <!--End For Tending Movie -->

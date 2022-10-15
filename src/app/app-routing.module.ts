@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'contact', canActivate:[AuthGuard] ,component:ContactComponent},
   {path:'moviedetails/:id/:term', canActivate:[AuthGuard] , component:MoviedetailsComponent},
   {path:'moviedetails/:id', canActivate:[AuthGuard] , component:MoviedetailsComponent},
-  {path:'castDetails/:id', canActivate:[AuthGuard] , component:CastDetailsComponent},
+  {path:'castDetails/:id/:gender', canActivate:[AuthGuard] , component:CastDetailsComponent},
   {path:'tvdetails/:id', canActivate:[AuthGuard] , component:TvdetailsComponent},
   {path:'settings',loadChildren:() => import ('./settings/settings.module').then((m)=> m.SettingsModule)},
   {path:'register',component:RegisterComponent},

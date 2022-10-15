@@ -163,14 +163,13 @@
 
     <div class="border"></div>
 
-    <div class="row g-4">
-      <div class="col-12">
+    <div class="row g-4 justify-content-center">
         <h3 class="h1 mb-3">Movie Cast</h3>
-        <div [ngClass]="movieCast.length < 4 ? 'col-md-6 col-12' : 'col-12'">
+        <div *ngIf=" movieCast ;else noCast" [ngClass]="movieCast.length < 4 ? 'col-md-6 col-12' : 'col-12'">
           <owl-carousel-o [options]="customOptions">
             <ng-container *ngFor="let cast of movieCast">
               <ng-template carouselSlide [id]="cast.id">
-                <a class="ancor_img" [routerLink]="['/castDetails', cast.id]">
+                <a class="ancor_img" [routerLink]="['/castDetails', cast.id , cast.gender]">
                   <img
                     [src]="cast.profile_path ? imgPrefix+cast.profile_path : ''   | image: placeholder"
                     [alt]="cast.original_name ? cast.original_name : cast.name"
@@ -183,7 +182,10 @@
             </ng-container>
           </owl-carousel-o>
         </div>
-      </div>
+
+        <ng-template #noCast>
+          <p class="fw-bold fs-3 text-center" >No Cast Available</p>
+        </ng-template>
     </div>
 
   </div>

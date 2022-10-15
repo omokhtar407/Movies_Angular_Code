@@ -11,11 +11,12 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class CastDetailsComponent implements OnInit {
 
-  id: string = '';
+  castId: string = '';
   castInfo: any = {};
   castMovies: any[] = [];
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500/';
   placeholder: string = 'https://via.placeholder.com/150';
+  castGender:number = 0;
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
@@ -54,15 +55,16 @@ export class CastDetailsComponent implements OnInit {
   ngOnInit(): void {
     this._NgxSpinnerService.show();
 
-    this.id = this._ActivatedRoute.snapshot.params.id;
+    this.castId = this._ActivatedRoute.snapshot.params.id;
+    this.castGender = this._ActivatedRoute.snapshot.params.gender;
 
-    this._CastServiceService.getCastInfo(Number(this.id)).subscribe((response) => {
+    this._CastServiceService.getCastInfo(Number(this.castId)).subscribe((response) => {
       this.castInfo = response;
       this._NgxSpinnerService.hide();
     });
 
 
-    this._CastServiceService.getCastMovies(Number(this.id)).subscribe((response) => {
+    this._CastServiceService.getCastMovies(Number(this.castId)).subscribe((response) => {
       this.castMovies = response.cast;
       this._NgxSpinnerService.hide();
     });

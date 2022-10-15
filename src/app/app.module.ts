@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -59,7 +59,8 @@ import { CastDetailsComponent } from './cast-details/cast-details.component';
     NgwWowModule,
     ToastrModule.forRoot({preventDuplicates:true,progressBar:true,progressAnimation:'increasing'}),
     CommonModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

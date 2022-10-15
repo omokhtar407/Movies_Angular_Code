@@ -64,29 +64,36 @@
 
     <div class="border"></div>
 
-    <div class="row g-4">
-      <div class="col-12">
-        <h3 class="h1 mb-3">Actor/Actress Movies</h3>
-        <owl-carousel-o [options]="customOptions">
-          <ng-container *ngFor="let movie of castMovies">
-            <ng-template carouselSlide [id]="movie.id">
-              <a class="ancor_img" [routerLink]="['/moviedetails', movie.id]">
-                <img
-                  class="w-100"
-                  [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
-                  [alt]="movie.title ? movie.title : movie.name"
-                />
-                <div class="vote">
-                  {{ movie.vote_average | vote }}
-                </div>
-              </a>
-            </ng-template>
-          </ng-container>
-        </owl-carousel-o>
+    <div class="row g-4 justify-content-center">
+        <h3 class="h1 mb-3">{{castGender == 1 ? "Actress" :
+                              castGender == 2 ? "Actor"   : "Actor / Actress"
+                            }} Movies
+        </h3>
+        <div *ngIf=" castMovies ;else noMovies" [ngClass]="castMovies.length < 4 ? 'col-md-6 col-12' : 'col-12'">
+          <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let movie of castMovies">
+              <ng-template carouselSlide [id]="movie.id">
+                <a class="ancor_img" [routerLink]="['/moviedetails', movie.id]">
+                  <img
+                    class="w-100"
+                    [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
+                    [alt]="movie.title ? movie.title : movie.name"
+                  />
+                  <div class="vote">
+                    {{ movie.vote_average | vote }}
+                  </div>
+                </a>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+
+        <ng-template #noMovies>
+          <p class="fw-bold fs-3 text-center" >No Movies Available</p>
+        </ng-template>
       </div>
     </div>
 
-  </div>
 </section>
 <!--End For Actor info -->
 
