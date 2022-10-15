@@ -26,6 +26,7 @@ import { CommonModule } from '@angular/common';
 import { TvdetailsComponent } from './tvdetails/tvdetails.component';
 import { VotePipe } from './vote.pipe';
 import { ImagePipe } from './image.pipe';
+import { CastDetailsComponent } from './cast-details/cast-details.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ImagePipe } from './image.pipe';
     SearchPipePipe,
     TvdetailsComponent,
     VotePipe,
-    ImagePipe
+    ImagePipe,
+    CastDetailsComponent
   ],
   imports: [
     BrowserModule,

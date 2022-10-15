@@ -11,7 +11,7 @@
 <header class="vh-100 d-flex align-items-end">
   <div class="header_bg">
     <img
-      [src]="imgPrefix + backGroundImg | image: placeholder"
+      [src]=" backGroundImg ? imgPrefix+backGroundImg : '' | image: placeholder"
       [alt]="movieTitle"
     />
   </div>
@@ -61,7 +61,7 @@
               <a class="owl_ancor_img" (click)="getMovieId(movie.id)">
                 <img
                   class="owl_img"
-                  [src]="imgPrefix + movie.poster_path | image: placeholder"
+                  [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
                   [alt]="movie.title ? movie.title : movie.name"
                 />
                 <span

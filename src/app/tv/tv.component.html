@@ -73,7 +73,7 @@
           <a class="ancor_img" [routerLink]="['/tvdetails', tv.id]">
             <img
               class="img-fluid"
-              [src]="imgPrefix + tv.poster_path | image: placeholder"
+              [src]="tv.poster_path ? imgPrefix + tv.poster_path : '' | image: placeholder"
               [alt]="tv.title ? tv.title : tv.name"
             />
             <div class="vote">

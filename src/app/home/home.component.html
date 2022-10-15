@@ -23,7 +23,7 @@
             <a class="ancor_img" [routerLink]="['/moviedetails', movie.id]">
               <img
                 class="w-100"
-                [src]="imgPrefix + movie.poster_path | image: placeholder"
+                [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
                 [alt]="movie.title ? movie.title : movie.name"
               />
               <div class="vote">
@@ -54,7 +54,7 @@
             >
               <img
                 class="w-100"
-                [src]="imgPrefix + movie.poster_path | image: placeholder"
+                [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
                 [alt]="movie.title ? movie.title : movie"
               />
               <div class="vote">
@@ -82,7 +82,7 @@
             <a class="ancor_img" [routerLink]="['/moviedetails', movie.id]">
               <img
                 class="w-100"
-                [src]="imgPrefix + movie.poster_path | image: placeholder"
+                [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
                 [alt]="movie.title ? movie.title : movie"
               />
               <div class="vote">
@@ -110,7 +110,7 @@
             <a class="ancor_img" [routerLink]="['/moviedetails', movie.id]">
               <img
                 class="w-100"
-                [src]="imgPrefix + movie.poster_path | image: placeholder"
+                [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
                 [alt]="movie.title ? movie.title : movie"
               />
               <div class="vote">
@@ -138,7 +138,7 @@
             <a class="ancor_img" [routerLink]="['/moviedetails', movie.id]">
               <img
                 class="w-100"
-                [src]="imgPrefix + movie.poster_path | image: placeholder"
+                [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
                 [alt]="movie.title ? movie.title : movie"
               />
               <div class="vote">

@@ -28,11 +28,6 @@ export class MoviesComponent implements OnInit {
     this.terms = searchForm.controls.term.value;
   }
 
-  ngOnInit(): void {
-    this._NgxSpinnerService.show();
-    this.getMovies(this.currentPage);
-  }
-
   getMovies(page: number) {
     this._NgxSpinnerService.show();
     this.currentPage = page;
@@ -85,4 +80,10 @@ export class MoviesComponent implements OnInit {
     this.currentPage = page;
     this.getMovies(page);
   }
+
+  ngOnInit(): void {
+    this._NgxSpinnerService.show();
+    this.getMovies(this.currentPage);
+  }
+
 }

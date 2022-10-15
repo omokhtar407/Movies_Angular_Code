@@ -32,4 +32,8 @@ export class MoviesService {
   getMovieTrailers(movie_id:number ):Observable<any>{
     return  this._HttpClient.get(`https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=c0d379e9b2fca29da7e3e39703976bc5&language=en-US`)
   }
+
+  getMovieCrew_Cast(movie_id:number ):Observable<any>{
+    return  this._HttpClient.get(`https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=c0d379e9b2fca29da7e3e39703976bc5&language=en-US`)
+  }
 }

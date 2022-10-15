@@ -76,7 +76,7 @@
           >
             <img
               class="img-fluid"
-              [src]="imgPrefix + movie.poster_path | image: placeholder"
+              [src]="movie.poster_path ? imgPrefix + movie.poster_path : '' | image: placeholder"
               [alt]="movie.title ? movie.title : movie.name"
             />
             <div class="vote">

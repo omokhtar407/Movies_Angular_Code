@@ -200,6 +200,7 @@ body::-webkit-scrollbar-thumb,
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
+  padding: 5px;
   opacity: 0;
   transition: opacity .5s;
   -webkit-transition: opacity .5s;
@@ -231,3 +232,42 @@ body::-webkit-scrollbar-thumb,
   font-weight: bold;
 }
 /* End Vote */
+/* Start Owl */
+#tv_details .owl-nav ,
+#movie_details .owl-nav,
+#cast_details .owl-nav
+{
+  display: block;
+  margin-top: 20px;
+}
+#movie_details  .owl-next,
+#tv_details  .owl-next,
+#cast_details  .owl-next,
+#movie_details  .owl-prev,
+#tv_details  .owl-prev,
+#cast_details  .owl-prev
+
+ {
+  font-size: 20px !important;
+  padding: 4px 10px !important;
+  background-color: red !important;
+  border-radius: 0  !important;
+  -webkit-border-radius: 0  !important;
+  -moz-border-radius: 0  !important;
+  -ms-border-radius: 0  !important;
+  -o-border-radius: 0  !important;
+  transition: background-color 0.3s linear;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -ms-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+}
+#movie_details  .owl-next:hover,
+#movie_details  .owl-prev:hover,
+#tv_details  .owl-next:hover,
+#tv_details  .owl-prev:hover,
+#cast_details  .owl-next:hover,
+#cast_details  .owl-prev:hover{
+  background-color: rgba(255, 0, 0, 0.342) !important;
+}
+/* End Owl  */

@@ -1,0 +1,41 @@
+body {
+  background-color: #141313 !important;
+}
+
+#cast_details {
+  background-color: #141313;
+}
+
+.spans-style {
+  padding: 0.3rem;
+  border-radius: 2px;
+  background-color: red;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-block;
+  color: #fff !important;
+}
+
+
+.pad {
+  padding-top: 6rem;
+}
+
+@media (max-width: 992px) {
+  .col-lg-4 {
+      order: -1;
+  }
+}
+
+
+.border {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(to right, red, white);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}

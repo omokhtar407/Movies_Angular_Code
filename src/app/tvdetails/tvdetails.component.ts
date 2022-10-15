@@ -2,6 +2,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ActivatedRoute } from '@angular/router';
 import { TvService } from './../tv.service';
 import { Component, OnInit } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-tvdetails',
@@ -16,6 +17,7 @@ export class TvdetailsComponent implements OnInit {
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500/';
   placeholder: string = 'https://via.placeholder.com/150';
   tvTrailers: any[] = [];
+  tvCast:any[] = [];
   isTrailer: boolean = false;
 
   constructor(
@@ -23,6 +25,34 @@ export class TvdetailsComponent implements OnInit {
     private _TvService: TvService,
     private _NgxSpinnerService: NgxSpinnerService
   ) {}
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    nav: true,
+    navText: [
+      '<i class="fas fa-angle-left" style="font-size:25px; font-style:italic;" ></i>',
+      '<i class="fas fa-angle-right" style="font-size:25px; font-style:italic;"></i>',
+    ],
+    margin: 10,
+    responsive: {
+      0: {
+        items: 2,
+      },
+      400: {
+        items:3 ,
+      },
+      740: {
+        items: 5,
+      },
+      940: {
+        items: 6,
+      },
+    },
+  };
 
   getTvTrailer(tv_id: number): void {
     this._TvService.getTvTrailers(tv_id).subscribe((response) => {
@@ -54,6 +84,11 @@ export class TvdetailsComponent implements OnInit {
 
     this._TvService.getTvDetails(this.id).subscribe((response) => {
       this.tvDetails = response;
+      this._NgxSpinnerService.hide();
+    });
+
+    this._TvService.getTvCrew_Cast(Number(this.id)).subscribe((response) => {
+      this.tvCast = response.cast;
       this._NgxSpinnerService.hide();
     });
 

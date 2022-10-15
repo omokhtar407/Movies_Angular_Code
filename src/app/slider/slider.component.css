@@ -5,6 +5,11 @@ header {
   position: absolute;
   inset: 0;
 }
+@media (max-width: 767px) {
+  .header_bg{
+    min-width:1000px ;
+  }
+}
 .header_bg::before {
   position: absolute;
   content: "";
