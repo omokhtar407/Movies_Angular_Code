@@ -1,6 +1,6 @@
 #Tv {
   padding: 6rem 0rem;
-  background-color: #000;
+  background-color: var(--blackColor);
 }
 @media (max-width: 767px) {
   form {
@@ -18,16 +18,16 @@
 .form-control {
   height: 40px;
   background-color: transparent;
-  color: #fff !important;
-  border: 1px solid #fff !important;
+  color: var(--whiteColor) !important;
+  border: 1px solid var(--whiteColor) !important;
 }
 .form-control::placeholder {
   color: #ccc;
 }
 .form-control:focus,
 .btn:focus {
-  border-color: red !important;
-  box-shadow: 0 0 0 0.25rem #b71c1c75 !important;
+  border-color: var(--mainColor) !important;
+  box-shadow: 0 0 0 0.25rem var(--thirdColor) !important;
 }
 .page-link {
   font-weight: 600;
@@ -36,9 +36,9 @@
 }
 
 .page-link:hover {
-  background-color: red !important;
+  background-color: var(--mainColor) !important;
 }
 
 .active {
-  background-color: red !important;
+  background-color: var(--mainColor) !important;
 }

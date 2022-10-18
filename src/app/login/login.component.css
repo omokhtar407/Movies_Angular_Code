@@ -4,44 +4,44 @@
   background-position: center center;
 }
 .signin_form {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--blackColor_50);
 }
 .logo {
   text-transform: capitalize;
   font-weight: 700;
   font-size: 1.6rem;
   display: block;
-  color: #fff;
+  color: var(--whiteColor);
   margin-bottom: 1.5rem;
   text-align: center;
 }
 .logo span {
-  color: red;
+  color: var(--mainColor);
 }
 h1 {
   font-size: 1.2rem;
 }
 .form-control {
   background-color: transparent;
-  color: #fff !important;
-  border: 1px solid #fff !important;
+  color: var(--whiteColor) !important;
+  border: 1px solid var(--whiteColor) !important;
 }
 .form-control::placeholder {
   color: #ccc;
 }
 .form-control:focus,
 .btn:focus {
-  border-color: red !important;
-  box-shadow: 0 0 0 0.25rem #b71c1c75 !important;
+  border-color: var(--mainColor) !important;
+  box-shadow: 0 0 0 0.25rem var(--thirdColor) !important;
 }
 .btn {
-  background-color: red;
+  background-color: var(--mainColor);
   display: block;
   width: 100%;
   transition: background-color 0.3s;
 }
 .btn:hover {
-  background-color: rgba(255, 0, 0, 0.637) !important;
+  background-color: var(--thirdColor) !important;
 }
 label,
 .forgot {
@@ -50,7 +50,7 @@ label,
   font-size: 14px;
 }
 .forgot:hover {
-  color: red !important;
+  color: var(--mainColor) !important;
 }
 @media (max-width: 320px) {
   .forgot {

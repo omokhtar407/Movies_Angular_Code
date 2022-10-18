@@ -21,7 +21,7 @@ p {
   color: #f5e7ebcc;
 }
 .info > small {
-  color: red;
+  color: var(--mainColor);
 }
 small {
   font-weight: 500;
@@ -41,18 +41,18 @@ small {
 }
 #best_movies p,
 #watch_movies p {
-  color: #fff;
+  color: var(--whiteColor);
   margin-bottom: 1.5rem;
 }
 .btn {
-  background-color: red !important;
+  background-color: var(--mainColor) !important;
   transition: background-color 0.3s;
 }
 .btn:hover {
-  background-color: rgba(255, 0, 0, 0.698) !important;
+  background-color: var(--thirdColor) !important;
 }
 #video_everyone {
-  background-color: #000;
+  background-color: var(--blackColor);
   overflow: hidden;
 }
 #video_everyone .item {
@@ -66,5 +66,5 @@ small {
   font-size: 0.8rem;
 }
 #video_everyone .item:hover h3 {
-  color: red;
+  color: var(--mainColor);
 }

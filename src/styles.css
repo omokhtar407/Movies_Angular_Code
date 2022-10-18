@@ -1,22 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat+Alternates&display=swap');
-
+:root{
+  --whiteColor:#fff;
+  --blackColor:#000;
+  --blackColor_50:rgba(0, 0, 0, 0.5);
+}
+body{
+  --mainColor:red;
+  --secondaryColor:rgba(255, 0, 0, 0.35);
+  --thirdColor:rgba(255, 0, 0, 0.55);
+}
+body.blue{
+  --mainColor:#0d6efd;
+  --secondaryColor:rgba(13, 110, 253,0.35);
+  --thirdColor:rgba(13, 110, 253,0.55);
+}
+body.orange{
+  --mainColor:rgb(246, 127, 29);
+  --secondaryColor:rgba(246, 127, 29,.35);
+  --thirdColor:rgba(246, 127, 29,.55);
+}
 body{
   font-family: 'Montserrat Alternates', sans-serif;
-  background-color: #000000;
-  color: #fff;
+  background-color: var(--blackColor);
+  color: var(--whiteColor);
   overflow-x: hidden;
 }
+
 a{
   text-decoration: none !important;
-  color: #fff !important;
+  color: var(--whiteColor) !important;
 }
 ::selection {
-  background-color: red;
-  color: white;
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
 }
 ::-moz-selection {
-  background-color: red;
-  color: white;
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
 }
 body::-webkit-scrollbar,
 .offcanvas-body::-webkit-scrollbar,
@@ -26,14 +46,14 @@ body::-webkit-scrollbar,
 body::-webkit-scrollbar-track,
 .offcanvas-body::-webkit-scrollbar-track,
 .modal::-webkit-scrollbar-track  {
-  background: rgba(255, 0, 0, 0.342);
+  background: var(--secondaryColor);
 }
 body::-webkit-scrollbar-thumb,
 .offcanvas-body::-webkit-scrollbar-thumb,
 .modal::-webkit-scrollbar-thumb {
-  background-color: red;
+  background-color: var(--mainColor);
   border-radius: 20px;
-  border: 5px solid red;
+  border: 5px solid var(--mainColor);
 }
 .overlay{
   position: absolute;
@@ -41,10 +61,10 @@ body::-webkit-scrollbar-thumb,
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--blackColor_50);
 }
 .ngx_spinner{
-  color: white;
+  color: var(--whiteColor);
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -86,7 +106,7 @@ body::-webkit-scrollbar-thumb,
 #Popular .owl-prev:hover,#Popular .owl-next:hover,
 #Top_Rated .owl-prev:hover,#Top_Rated .owl-next:hover,
 #UpComing .owl-prev:hover,#UpComing .owl-next:hover{
-  color: red;
+  color: var(--mainColor);
 }
 #Trending .owl-prev i,#Trending .owl-next i,
 #Now_Playing .owl-prev i,#Now_Playing .owl-next i,
@@ -120,7 +140,7 @@ body::-webkit-scrollbar-thumb,
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000;
+  background-color: var(--blackColor);
   z-index: 99999999999;
   display: none;
   }
@@ -136,7 +156,7 @@ body::-webkit-scrollbar-thumb,
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: rgb(255, 0, 0);
+  background: var(--mainColor);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -192,7 +212,7 @@ body::-webkit-scrollbar-thumb,
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #6a0000ba;
+  background-color: var(--thirdColor);
   z-index: 3;
   display: flex;
   justify-content: center;
@@ -219,7 +239,7 @@ body::-webkit-scrollbar-thumb,
   width: 30px;
   height: 30px;
   padding: 0.5rem;
-  background-color: red;
+  background-color: var(--mainColor);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,7 +270,7 @@ body::-webkit-scrollbar-thumb,
  {
   font-size: 20px !important;
   padding: 4px 10px !important;
-  background-color: red !important;
+  background-color: var(--mainColor) !important;
   border-radius: 0  !important;
   -webkit-border-radius: 0  !important;
   -moz-border-radius: 0  !important;
@@ -268,6 +288,6 @@ body::-webkit-scrollbar-thumb,
 #tv_details  .owl-prev:hover,
 #cast_details  .owl-next:hover,
 #cast_details  .owl-prev:hover{
-  background-color: rgba(255, 0, 0, 0.342) !important;
+  background-color: var(--secondaryColor) !important;
 }
 /* End Owl  */

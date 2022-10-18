@@ -1,19 +1,19 @@
 body {
-  background-color: #141313 !important;
+  background-color: #212020 !important;
 }
 
 #cast_details {
-  background-color: #141313;
+  background-color: #212020;
 }
 
 .spans-style {
   padding: 0.3rem;
   border-radius: 2px;
-  background-color: red;
+  background-color: var(--mainColor);
   font-size: 1.1rem;
   font-weight: 500;
   display: inline-block;
-  color: #fff !important;
+  color: var(--whiteColor) !important;
 }
 
 

@@ -1,5 +1,23 @@
 <app-navbar></app-navbar>
 
+<!--Start Options Box -->
+<section id="optionsBox" >
+  <i (click)="handelOptBox()" id="toggleBtn" class="fas fa-cog"></i>
+  <div class="colors-box ">
+      <h4 class="fw-bold text-black">Website Colors</h4>
+      <ul class="list-unstyled p-0 ">
+          <li>Choose Your Fav Color <i class="ms-2 fas fa-check"></i></li>
+      </ul>
+      <div class="color-items">
+        <div class="item" (click)="changeWebsiteToRed()"></div>
+        <div class="item" (click)="changeWebsiteToBlue()"></div>
+        <div class="item" (click)="changeWebsiteToOrange()"></div>
+      </div>
+  </div>
+
+</section>
+<!--End Options Box -->
+
 <div [@routeAnimation]="outlet.isActivated?outlet.activatedRoute:''">
 
   <!-- The router outlet will emit the activate event any time a new component is being instantiated, so we could use (activate) to scroll (for example) to the top: -->

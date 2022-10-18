@@ -127,6 +127,7 @@ export class SliderComponent implements OnInit {
     this._MoviesService.getTrending('movie', 1).subscribe((response) => {
       this.trendingMovies = response.results;
       this.firstMovies = this.trendingMovies[0];
+      this.movieId  = this.firstMovies.id;
       this.ShowMovie(this.firstMovies.id);
     });
   }

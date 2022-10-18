@@ -2,7 +2,7 @@
 .navbar {
   z-index: 5;
   padding: 0.5rem !important;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--blackColor_50);
 }
 @media (max-width: 767px) {
   .container,
@@ -10,21 +10,26 @@
     max-width: 100% !important;
   }
 }
+@media (min-width: 767px) {
+  .navbar-nav{
+    align-items: center;
+  }
+}
 .navbar-brand {
   text-transform: capitalize;
   font-weight: 700;
   font-size: 1.6rem;
-  color: #fff;
+  color: var(--whiteColor);
 }
 .navbar-brand:hover {
-  color: #fff !important;
+  color: var(--whiteColor) !important;
 }
-.navbar-brand span {
-  color: red;
+.navbar-brand > img{
+  width: 130px;
 }
 .nav-link {
   text-transform: capitalize;
-  color: #fff !important;
+  color: var(--whiteColor) !important;
   padding: 0.5rem 0.7rem !important;
   font-weight: 700;
   border-radius: 0.5rem;
@@ -41,7 +46,7 @@
   box-shadow: none;
 }
 .nav-link:hover {
-  color: red !important;
+  color: var(--mainColor) !important;
 }
 .bar-ico {
   padding: 0 5px;
@@ -51,33 +56,48 @@
 }
 @media (max-width: 767px) {
   .collapse {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--blackColor_50);
   }
   .nav-link {
     padding: 0.5rem 0.7rem !important;
-    color: #fff !important;
+    color: var(--whiteColor) !important;
   }
 }
+.dropdown-toggle{
+  padding: 5px 10px !important;
+  background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  color: var(--whiteColor);
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+}
+.dropdown-toggle:hover{
+  background-color: var(--thirdColor) !important;
+}
+
 .logout,
 .signin {
-  background-color: red;
+  background-color: var(--mainColor);
   border-radius: 0 !important;
   padding: 0.3rem 1.2rem !important;
-  border: 1px solid red;
+  border: 1px solid var(--mainColor);
   text-align: center;
 }
 .signup {
   border-radius: 0 !important;
   padding: 0.3rem 1.2rem !important;
-  border: 1px solid red;
+  border: 1px solid var(--mainColor);
   text-align: center;
 }
 .logout:hover,
 .signin:hover,
 .signup:hover {
-  background-color: rgba(255, 0, 0, 0.698) !important;
-  color: #fff !important;
-  border: 1px solid rgba(255, 0, 0, 0.698) !important;
+  background-color: var(--thirdColor) !important;
+  color: var(--whiteColor) !important;
+  border: 1px solid var(--thirdColor) !important;
 }
 
 /* End Nav */

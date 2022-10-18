@@ -16,37 +16,37 @@ small a {
   transition: color 0.3s;
 }
 small a:hover {
-  color: red !important;
+  color: var(--mainColor) !important;
 }
 i {
-  color: red;
+  color: var(--mainColor);
   padding-top: 5px;
 }
 .group {
   flex-basis: 48%;
 }
 .contactUs {
-  background-color: #000;
+  background-color: var(--blackColor);
 }
 .form-control {
   background-color: #090808;
-  color: #fff !important;
-  border: 1px solid #fff !important;
+  color: var(--whiteColor) !important;
+  border: 1px solid var(--whiteColor) !important;
 }
 .form-control::placeholder {
   color: #ccc;
 }
 .form-control:focus,
 .btn:focus {
-  border-color: red !important;
-  box-shadow: 0 0 0 0.25rem #b71c1c75 !important;
+  border-color: var(--mainColor) !important;
+  box-shadow: 0 0 0 0.25rem var(--thirdColor) !important;
 }
 .btn {
-  background-color: red;
+  background-color: var(--mainColor);
   display: block;
   width: 100%;
   transition: background-color 0.3s;
 }
 .btn:hover {
-  background-color: rgba(255, 0, 0, 0.637) !important;
+  background-color: var(--thirdColor) !important;
 }

@@ -5,11 +5,6 @@ header {
   position: absolute;
   inset: 0;
 }
-@media (max-width: 767px) {
-  .header_bg{
-    min-width:1000px ;
-  }
-}
 .header_bg::before {
   position: absolute;
   content: "";
@@ -18,12 +13,17 @@ header {
   right: 0;
   bottom: 0;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--blackColor_50);
 }
 .header_bg > img {
   position: relative;
   width: 100%;
   height: 100%;
+}
+@media (max-width: 767px) {
+  .header_bg > img {
+    visibility: hidden;
+  }
 }
 .slider-container {
   position: relative;
@@ -85,10 +85,10 @@ header {
 .owl_span,
 .owl_span_active {
   position: absolute;
-  color: #fff;
+  color: var(--whiteColor);
   inset: 0;
-  background-color: #6a0000ba;
-  border: 3px solid red;
+  background-color: var(--thirdColor);
+  border: 3px solid var(--mainColor);
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -116,8 +116,8 @@ header {
 }
 .movie_tools .btn {
   border-radius: 0 !important;
-  background-color: red !important;
-  color: #fff;
+  background-color: var(--mainColor) !important;
+  color: var(--whiteColor);
   font-weight: 600;
   margin: 5px;
   -webkit-border-radius: 0 !important;
@@ -126,7 +126,7 @@ header {
   -o-border-radius: 0 !important;
 }
 .movie_tools .btn:hover {
-  background-color: rgba(255, 0, 0, 0.698) !important;
+  background-color: var(--thirdColor) !important;
 }
 
 /* Start Modal */
@@ -145,8 +145,8 @@ header {
 }
 .modal-tools .fa-times {
   padding: 0.5rem;
-  background: rgba(255, 0, 0, 0.342);
-  color: white;
+  background: var(--secondaryColor);
+  color: var(--whiteColor);
   font-size: 25px;
   cursor: pointer;
 }
@@ -159,7 +159,7 @@ header {
 /* End of Modal*/
 
 .no_trailer {
-  background: rgba(255, 0, 0, 0.342);
+  background: var(--secondaryColor);
   font-size: 2.5rem;
   height: 200px;
   display: flex;

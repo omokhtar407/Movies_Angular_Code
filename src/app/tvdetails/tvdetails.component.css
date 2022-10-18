@@ -1,19 +1,19 @@
 body {
-    background-color: #141313 !important;
+    background-color: #212020 !important;
 }
 
 #tv_details {
-    background-color: #141313;
+    background-color: #212020;
 }
 
 .spans-style {
     padding: 0.3rem;
     border-radius: 2px;
-    background-color: red;
+    background-color: var(--mainColor);
     font-size: 1.1rem;
     font-weight: 500;
     display: inline-block;
-    color: #fff !important;
+    color: var(--whiteColor) !important;
 }
 
 .company_img_container {
@@ -54,8 +54,8 @@ body {
 
 .modal-tools .fa-times {
     padding: 0.5rem;
-    background: rgba(255, 0, 0, 0.342);
-    color: white;
+    background: var(--secondaryColor);
+    color: var(--whiteColor);
     font-size: 25px;
     cursor: pointer;
 }
@@ -70,7 +70,7 @@ body {
 /* End of Modal*/
 
 .no_trailer {
-    background: rgba(255, 0, 0, 0.342);
+    background: var(--secondaryColor);
     font-size: 2.5rem;
     height: 200px;
     display: flex;
@@ -84,7 +84,7 @@ body {
     height: 3px;
     margin-bottom: 3rem;
     border-radius: 50%;
-    background: linear-gradient(to right, red, white);
+    background: linear-gradient(to right, var(--mainColor), var(--whiteColor));
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;

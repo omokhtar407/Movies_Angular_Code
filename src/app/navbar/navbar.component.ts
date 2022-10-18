@@ -7,8 +7,10 @@ declare var $: any;
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+
   isLogin: boolean = false;
   isToggle: boolean = false;
+
   constructor(private _AuthService: AuthService) {}
 
   logOut() {

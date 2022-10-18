@@ -10,6 +10,7 @@ import {
 } from '@angular/animations';
 import { RouterOutlet } from '@angular/router';
 
+declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,8 +25,9 @@ import { RouterOutlet } from '@angular/router';
   ]
 })
 export class AppComponent {
-  // title = 'Movies';
+
   title = 'LoginMoviesProject';
+
   prepareRoute(outlet: RouterOutlet): any {
     if (outlet.isActivated) {
       return outlet.activatedRoute.snapshot.url
@@ -41,4 +43,34 @@ export class AppComponent {
             behavior: 'smooth'
     });
   }
+
+  handelOptBox(){
+      let colorBoxWidth = $(".colors-box").innerWidth();
+
+      if($('#optionsBox').css("right") == "0px"){
+          $('#optionsBox').animate({right:`-${colorBoxWidth}`}, 500);
+      }
+      else{
+          $('#optionsBox').animate({right:`0px`}, 500);
+      }
+  }
+
+  changeWebsiteToRed(){
+    const body = document.querySelector('body')
+    body?.classList.remove('blue');
+    body?.classList.remove('orange');
+  }
+  changeWebsiteToBlue(){
+    const body = document.querySelector('body')
+    body?.classList.add('blue');
+    body?.classList.remove('red');
+    body?.classList.remove('orange');
+  }
+  changeWebsiteToOrange(){
+    const body = document.querySelector('body')
+    body?.classList.add('orange');
+    body?.classList.remove('red');
+    body?.classList.remove('blue');
+  }
+
 }

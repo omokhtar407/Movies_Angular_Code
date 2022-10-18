@@ -118,10 +118,9 @@
                   class="col company_img_container"
                 >
                   <img
-                    *ngIf="x.logo_path"
                     class="company-img"
-                    [src]="x.logo_path ? imgPrefix + x.logo_path : '' | image: placeholder"
-                    alt="company logo"
+                    [src]="imgPrefix + x.logo_path"
+                    [alt]="x.name"
                   />
                 </div>
               </div>
@@ -191,4 +190,5 @@
   </div>
 </section>
 <!--End For Tending Movie -->
+
 
