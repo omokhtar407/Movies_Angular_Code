@@ -63,20 +63,6 @@
     color: var(--whiteColor) !important;
   }
 }
-.dropdown-toggle{
-  padding: 5px 10px !important;
-  background-color: var(--mainColor);
-  border: 1px solid var(--mainColor);
-  color: var(--whiteColor);
-  transition: background-color 0.3s ease-in-out;
-  -webkit-transition: background-color 0.3s ease-in-out;
-  -moz-transition: background-color 0.3s ease-in-out;
-  -ms-transition: background-color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out;
-}
-.dropdown-toggle:hover{
-  background-color: var(--thirdColor) !important;
-}
 
 .logout,
 .signin {
@@ -85,6 +71,10 @@
   padding: 0.3rem 1.2rem !important;
   border: 1px solid var(--mainColor);
   text-align: center;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
 }
 .signup {
   border-radius: 0 !important;
