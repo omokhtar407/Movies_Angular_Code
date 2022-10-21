@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   transition,
   trigger,
@@ -42,35 +42,6 @@ export class AppComponent {
             left: 0,
             behavior: 'smooth'
     });
-  }
-
-  handelOptBox(){
-      let colorBoxWidth = $(".colors-box").innerWidth();
-
-      if($('#optionsBox').css("right") == "0px"){
-          $('#optionsBox').animate({right:`-${colorBoxWidth}`}, 500);
-      }
-      else{
-          $('#optionsBox').animate({right:`0px`}, 500);
-      }
-  }
-
-  changeWebsiteToRed(){
-    const body = document.querySelector('body')
-    body?.classList.remove('blue');
-    body?.classList.remove('orange');
-  }
-  changeWebsiteToBlue(){
-    const body = document.querySelector('body')
-    body?.classList.add('blue');
-    body?.classList.remove('red');
-    body?.classList.remove('orange');
-  }
-  changeWebsiteToOrange(){
-    const body = document.querySelector('body')
-    body?.classList.add('orange');
-    body?.classList.remove('red');
-    body?.classList.remove('blue');
   }
 
 }

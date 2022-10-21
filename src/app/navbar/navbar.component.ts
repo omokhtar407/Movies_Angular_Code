@@ -26,6 +26,24 @@ export class NavbarComponent implements OnInit {
     this.isToggle = false;
   }
 
+  changeWebsiteToRed(){
+    const body = document.querySelector('body')
+    body?.classList.remove('blue');
+    body?.classList.remove('orange');
+  }
+  changeWebsiteToBlue(){
+    const body = document.querySelector('body')
+    body?.classList.add('blue');
+    body?.classList.remove('red');
+    body?.classList.remove('orange');
+  }
+  changeWebsiteToOrange(){
+    const body = document.querySelector('body')
+    body?.classList.add('orange');
+    body?.classList.remove('red');
+    body?.classList.remove('blue');
+  }
+  
   ngOnInit(): void {
     this._AuthService.userData.subscribe(() => {
       if (this._AuthService.userData.getValue() != null) {

@@ -106,6 +106,28 @@
           >
         </li>
 
+        <li class="nav-item me-1 mb-md-0 mb-1">
+          <div *ngIf="isLogin" class="dropdown">
+
+            <button  class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i  id="toggleBtn" (click)=" removeCollapse()" class="fas fa-cog"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="dropdown-item" (click)="changeWebsiteToRed()">Red</div>
+              </li>
+              <li>
+                <div class="dropdown-item" (click)="changeWebsiteToBlue()">Blue</div>
+              </li>
+              <li>
+                <div class="dropdown-item" (click)="changeWebsiteToOrange()">Orange</div>
+              </li>
+              <div class="item" (click)="changeWebsiteToBlue()"></div>
+              <div class="item" (click)="changeWebsiteToOrange()"></div>
+            </ul>
+          </div>
+        </li>
+
         <li class="nav-item">
           <a
             (click)="logOut(); removeCollapse()"

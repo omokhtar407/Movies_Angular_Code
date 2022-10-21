@@ -64,6 +64,34 @@
   }
 }
 
+.dropdown > button{
+    border: 1px solid var(--mainColor);
+    border-radius: 0;
+    /* font-size: 15px; */
+    background-color: var(--mainColor);
+    color: var(--whiteColor) !important;
+    padding: 0.3rem 1rem ;
+}
+
+.dropdown > button:hover{background-color :var(--thirdColor)}
+.dropdown > button:focus{box-shadow:none;}
+.dropdown .dropdown-menu{
+  background-color: var(--secondaryColor);
+  margin-top: 5px;
+  padding: 0;
+  border: 1px solid var(--mainColor);
+  border-radius:0;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  -ms-border-radius:0;
+  -o-border-radius:0;
+  cursor: pointer;
+
+}
+.dropdown .dropdown-menu .dropdown-item{font-weight: 600; color: var(--whiteColor);}
+.dropdown .dropdown-menu .dropdown-item:hover{
+  background-color: var(--thirdColor);
+}
 .logout,
 .signin {
   background-color: var(--mainColor);
