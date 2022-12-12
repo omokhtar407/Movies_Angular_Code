@@ -38,13 +38,13 @@ export class LoginComponent implements OnInit {
           this._Router.navigate(['home']);
           this.toastr.success('Login Successed', '', {
             positionClass: 'toast-top-right',
-            timeOut: 1500,
+            timeOut: 2500,
           });
         } else {
           this.error = response.message;
           this.toastr.error(`${this.error}`, '', {
             positionClass: 'toast-top-right',
-            timeOut: 1500,
+            timeOut: 2500,
           });
         }
       }

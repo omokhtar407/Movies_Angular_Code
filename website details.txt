@@ -1,0 +1,29 @@
+Movies & Series website.
+I build this website using Angular, Bootstrap5, JWT, Apis, RegEx, Ngx-Owl Carousel, and ngx-spinner.
+
+APIs:- MovieDB --> ( https://developers.themoviedb.org/3/trending/get-trending ).
+
+Website Details:-
+1- Basic Login, Register functionality.
+2- The website is getting Trending, Popular, and Top Rated and Up Coming  Movies. 
+3- The website is getting Series.
+4- The website has Pagination and Search to find your favorite movie and series.
+5- The user can see all information about the movie and series ( movie/series cast, movie/series trailer, when it was released, rating, languages, production companies, and countries ).
+6- The user can see the actor/actress's information and movies that he/she did.
+7- The user can change the website color.
+
+Website pages:- 
+1 - Home
+2 - Movies
+3 - Series
+4 - About us
+5 - Contact us
+6 - Login
+7 - Register
+8 - Movies Details.
+9 - Series Details
+
+Live Preview:- https://tinyurl.com/3twy7aev
+Website Code:- https://tinyurl.com/593y248c
+
+If you have any suggestions to improve the website or see any problem that can be modified, I hope you will tell me.

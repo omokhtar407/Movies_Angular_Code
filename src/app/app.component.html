@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 
-<div [@routeAnimation]="outlet.isActivated?outlet.activatedRoute:''">
-
+<div [@routeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
   <!-- The router outlet will emit the activate event any time a new component is being instantiated, so we could use (activate) to scroll (for example) to the top: -->
-  <router-outlet #outlet="outlet" (activate)="ScrollToTop($event)"></router-outlet>
+  <router-outlet
+    #outlet="outlet"
+    (activate)="ScrollToTop($event)"
+  ></router-outlet>
 </div>
 
 <app-footer></app-footer>
-
-
