@@ -1,6 +1,5 @@
 import { CastServiceService } from './../cast-service.service';
 import { Component, OnInit } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -20,8 +19,7 @@ export class CastDetailsComponent implements OnInit {
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
-    private _CastServiceService: CastServiceService,
-    private _NgxSpinnerService: NgxSpinnerService
+    private _CastServiceService: CastServiceService
   ) { }
 
   customOptions: OwlOptions = {
@@ -53,25 +51,19 @@ export class CastDetailsComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this._NgxSpinnerService.show();
 
     this.castId = this._ActivatedRoute.snapshot.params.id;
     this.castGender = this._ActivatedRoute.snapshot.params.gender;
 
     this._CastServiceService.getCastInfo(Number(this.castId)).subscribe((response) => {
       this.castInfo = response;
-      this._NgxSpinnerService.hide();
     });
 
 
     this._CastServiceService.getCastMovies(Number(this.castId)).subscribe((response) => {
       this.castMovies = response.cast;
-      this._NgxSpinnerService.hide();
     });
 
-    (error: any) => {
-      this._NgxSpinnerService.hide();
-    };
   }
 
 }

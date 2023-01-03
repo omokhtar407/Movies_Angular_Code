@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from './../movies.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -16,8 +15,7 @@ export class MoviesComponent implements OnInit {
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500';
   placeholder: string = 'https://via.placeholder.com/150';
   constructor(
-    private _MoviesService: MoviesService,
-    private _NgxSpinnerService: NgxSpinnerService
+    private _MoviesService: MoviesService
   ) {}
 
   searchForm: FormGroup = new FormGroup({
@@ -29,18 +27,13 @@ export class MoviesComponent implements OnInit {
   }
 
   getMovies(page: number) {
-    this._NgxSpinnerService.show();
     this.currentPage = page;
     this._MoviesService.getTrending('movie', page).subscribe((response) => {
       this.trendingMovies = response.results;
       this.totalPages = response.total_pages;
-      this._NgxSpinnerService.hide();
       this.setPages();
     });
 
-    (error: any) => {
-      this._NgxSpinnerService.hide();
-    };
   }
 
   setPages() {
@@ -82,7 +75,6 @@ export class MoviesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._NgxSpinnerService.show();
     this.getMovies(this.currentPage);
   }
 

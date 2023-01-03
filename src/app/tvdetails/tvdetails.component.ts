@@ -1,4 +1,4 @@
-import { NgxSpinnerService } from 'ngx-spinner';
+
 import { ActivatedRoute } from '@angular/router';
 import { TvService } from './../tv.service';
 import { Component, OnInit } from '@angular/core';
@@ -22,8 +22,7 @@ export class TvdetailsComponent implements OnInit {
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
-    private _TvService: TvService,
-    private _NgxSpinnerService: NgxSpinnerService
+    private _TvService: TvService
   ) {}
 
   customOptions: OwlOptions = {
@@ -71,30 +70,22 @@ export class TvdetailsComponent implements OnInit {
                                             encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen>
                                           </iframe>`;
-          this._NgxSpinnerService.hide();
         }
       });
     });
   }
 
   ngOnInit(): void {
-    this._NgxSpinnerService.show();
 
     this.id = this._ActivatedRoute.snapshot.params.id;
 
     this._TvService.getTvDetails(this.id).subscribe((response) => {
       this.tvDetails = response;
-      this._NgxSpinnerService.hide();
     });
 
     this._TvService.getTvCrew_Cast(Number(this.id)).subscribe((response) => {
       this.tvCast = response.cast;
-      this._NgxSpinnerService.hide();
     });
-
-    (error: any) => {
-      this._NgxSpinnerService.hide();
-    };
 
     this.getTvTrailer(Number(this.id));
   }

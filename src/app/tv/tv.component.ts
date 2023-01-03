@@ -1,7 +1,6 @@
 import { TvService } from './../tv.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-tv',
@@ -17,8 +16,7 @@ export class TvComponent implements OnInit {
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500';
   placeholder: string = 'https://via.placeholder.com/150';
   constructor(
-    private _TvService: TvService,
-    private _NgxSpinnerService: NgxSpinnerService
+    private _TvService: TvService
   ) {}
 
   searchForm: FormGroup = new FormGroup({
@@ -30,17 +28,12 @@ export class TvComponent implements OnInit {
   }
 
   getMovies(page: number) {
-    this._NgxSpinnerService.show();
     this.currentPage = page;
     this._TvService.getTrending('tv', page).subscribe((response) => {
       this.trendingTV = response.results;
       this.totalPages = response.total_pages;
-      this._NgxSpinnerService.hide();
       this.setPages();
     });
-    (error: any) => {
-      this._NgxSpinnerService.hide();
-    };
   }
 
   setPages() {
@@ -82,7 +75,6 @@ export class TvComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._NgxSpinnerService.show();
     this.getMovies(this.currentPage);
   }
 }

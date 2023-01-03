@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
@@ -27,6 +27,8 @@ import { TvdetailsComponent } from './tvdetails/tvdetails.component';
 import { VotePipe } from './vote.pipe';
 import { ImagePipe } from './image.pipe';
 import { CastDetailsComponent } from './cast-details/cast-details.component';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { LoadInterceptor } from './core/interceptors/load.interceptor';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,10 @@ import { CastDetailsComponent } from './cast-details/cast-details.component';
     NgxSpinnerModule,
     FormsModule
     ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:LoadInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,15 @@
+<ngx-spinner
+  bdColor="#000"
+  size="medium"
+  color="white"
+  type="ball-clip-rotate-pulse"
+  [fullScreen]="true"
+>
+  <p class="ngx_spinner">Loading...</p>
+</ngx-spinner>
+
 <app-navbar></app-navbar>
+
 
 <div [@routeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
   <!-- The router outlet will emit the activate event any time a new component is being instantiated, so we could use (activate) to scroll (for example) to the top: -->

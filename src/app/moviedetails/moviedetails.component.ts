@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { MoviesService } from '../movies.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -23,8 +22,7 @@ export class MoviedetailsComponent implements OnInit {
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
-    private _MoviesService: MoviesService,
-    private _NgxSpinnerService: NgxSpinnerService
+    private _MoviesService: MoviesService
   ) {}
 
   customOptions: OwlOptions = {
@@ -72,37 +70,28 @@ export class MoviedetailsComponent implements OnInit {
                                             encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen>
                                         </iframe>`;
-          this._NgxSpinnerService.hide();
         }
       });
     });
   }
 
   ngOnInit(): void {
-    this._NgxSpinnerService.show();
     this.id = this._ActivatedRoute.snapshot.params.id;
     this.term = this._ActivatedRoute.snapshot.params.term;
 
-    this._MoviesService
-      .getMovieDetails(this.id, this.term)
-      .subscribe((response) => {
-        this.movieDetails = response;
-        this._NgxSpinnerService.hide();
-      });
+    // this._MoviesService
+    //   .getMovieDetails(this.id, this.term)
+    //   .subscribe((response) => {
+    //     this.movieDetails = response;
+    //   });
 
     this._MoviesService.getMoviesTypesDetails(this.id).subscribe((response) => {
       this.movieDetails = response;
-      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMovieCrew_Cast(Number(this.id)).subscribe((response) => {
       this.movieCast = response.cast;
-      this._NgxSpinnerService.hide();
     });
-
-    (error: any) => {
-      this._NgxSpinnerService.hide();
-    };
 
     this.getMovieTrailer(Number(this.id));
   }

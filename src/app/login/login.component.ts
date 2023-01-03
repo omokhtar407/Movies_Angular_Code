@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from '../auth.service';
 import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -14,7 +13,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private _AuthService: AuthService,
     private _Router: Router,
-    private _NgxSpinnerService: NgxSpinnerService,
     private toastr: ToastrService
   ) {}
 
@@ -32,6 +30,7 @@ export class LoginComponent implements OnInit {
   submitLoginForm(loginForm: FormGroup) {
     this._AuthService.login(loginForm.value).subscribe((response) => {
       if (loginForm.valid) {
+        console.log(response);
         if (response.message == 'success') {
           localStorage.setItem('userToken', response.token);
           this._AuthService.saveUserData();
@@ -52,9 +51,5 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._NgxSpinnerService.show();
-    setTimeout(() => {
-      this._NgxSpinnerService.hide();
-    }, 2000);
   }
 }

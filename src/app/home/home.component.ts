@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,8 +15,7 @@ export class HomeComponent implements OnInit {
   placeholder: string = 'https://via.placeholder.com/150';
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500/';
   constructor(
-    private _MoviesService: MoviesService,
-    private _NgxSpinnerService: NgxSpinnerService
+    private _MoviesService: MoviesService
   ) {}
 
   customOptions: OwlOptions = {
@@ -49,34 +47,25 @@ export class HomeComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this._NgxSpinnerService.show();
 
     this._MoviesService.getTrending('movie', 1).subscribe((response) => {
       this.trendingMovies = response.results;
-      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('now_playing').subscribe((response) => {
       this.nowPlaying = response.results;
-      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('popular').subscribe((response) => {
       this.popular = response.results;
-      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('top_rated').subscribe((response) => {
       this.topRated = response.results;
-      this._NgxSpinnerService.hide();
     });
 
     this._MoviesService.getMoviesTypes('upcoming').subscribe((response) => {
       this.upComing = response.results;
-      this._NgxSpinnerService.hide();
     });
-    (error: any) => {
-      this._NgxSpinnerService.hide();
-    };
   }
 }
