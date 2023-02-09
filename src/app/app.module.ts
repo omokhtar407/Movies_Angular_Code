@@ -1,73 +1,39 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
-import { SliderComponent } from './slider/slider.component';
-import { NgxSpinnerModule } from "ngx-spinner";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgwWowModule } from 'ngx-wow';
-import { MoviesComponent } from './movies/movies.component';
-import { TvComponent } from './tv/tv.component';
-import { SearchPipePipe } from './search-pipe.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
-import { TvdetailsComponent } from './tvdetails/tvdetails.component';
-import { VotePipe } from './vote.pipe';
-import { ImagePipe } from './image.pipe';
-import { CastDetailsComponent } from './cast-details/cast-details.component';
-import { ErrorInterceptor } from './core/interceptors/error.interceptor';
-import { LoadInterceptor } from './core/interceptors/load.interceptor';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    RegisterComponent,
-    LoginComponent,
-    HomeComponent,
-    NotFoundComponent,
-    AboutComponent,
-    ContactComponent,
-    MoviedetailsComponent,
-    SliderComponent,
-    MoviesComponent,
-    TvComponent,
-    SearchPipePipe,
-    TvdetailsComponent,
-    VotePipe,
-    ImagePipe,
-    CastDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    CarouselModule,
-    NgwWowModule,
-    ToastrModule.forRoot({preventDuplicates:true,progressBar:true,progressAnimation:'increasing'}),
+    RouterModule,
+    HttpClientModule,
     CommonModule,
     NgxSpinnerModule,
-    FormsModule
-    ],
-  providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
-    {provide:HTTP_INTERCEPTORS,useClass:LoadInterceptor,multi:true}
+    CoreModule,
+    SharedModule,
+    NgwWowModule,
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+      progressBar: true,
+      progressAnimation: 'increasing',
+    }),
   ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

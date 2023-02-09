@@ -1,0 +1,48 @@
+#signUp {
+  background-image: url(../../../../assets/imgs/face.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.signup_form {
+  background-color: var(--blackColor_50);
+}
+.logo {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.6rem;
+  display: block;
+  color: var(--whiteColor);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.logo span {
+  color: var(--mainColor);
+}
+h1 {
+  font-size: 1.2rem;
+}
+p {
+  margin-bottom: 0;
+}
+.form-control {
+  background-color: transparent;
+  color: var(--whiteColor) !important;
+  border: 1px solid var(--whiteColor) !important;
+}
+.form-control::placeholder {
+  color: #ccc;
+}
+.form-control:focus,
+.btn:focus {
+  border-color: var(--mainColor) !important;
+  box-shadow: 0 0 0 0.25rem var(--thirdColor) !important;
+}
+.btn {
+  background-color: var(--mainColor);
+  display: block;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: var(--thirdColor) !important;
+}
